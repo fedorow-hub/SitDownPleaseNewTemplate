@@ -1,0 +1,54 @@
+// Заголовки, общие БЄМ блоки и проче...
+.btn-dark {
+  color: #fff;
+  font-weight: 700;
+  font-size: 16px;
+  background-color: $mainPurpur;
+  padding: 22px 50px;
+  border-radius: 10px;
+  transition: all .3s ease;
+  @media (max-width:$mobileSmall){
+    width: 100%;
+  }
+  &:hover {
+    background-color: #C998FB;
+  }
+  &:focus {
+    outline: none;
+    box-shadow: inset 0 0 0 2px #7033AC;
+  }
+  &:active {
+    background-color: #7033AC;
+  }
+}
+
+.btn-light {
+  font-weight: 600;
+  color: $mainPurpur;
+  padding: 19px 35px;
+  border: 2px solid $mainPurpur;
+  border-radius: 10px;
+  width: 128px;
+  transition: all .3s ease;
+  &:hover {
+    background-color: $mainPurpur;
+    color: #fff;
+  }
+  &:focus {
+    outline: none;
+    background-color: #C998FB;
+    color: #fff;
+    border: 2px solid $mainPurpur;
+  }
+  &:active {
+    background-color: #7033AC;
+    border: 2px solid #7033AC;
+  }
+}
+
+.title {
+  font-size: 32px;
+  @media (max-width:$mobileSmall){
+    font-size: 24px;
+  }
+}

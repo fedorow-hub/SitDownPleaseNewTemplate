@@ -1,0 +1,41 @@
+{
+  "products": [
+    {
+      "id": 9,
+      "url": "#",
+      "rating": "4.7",
+      "productUrl": "#",
+      "image": "9.png",
+      "title": "Диван из кожзама “F-85”",
+      "price": "26 990 руб"
+    },
+    {
+      "id": 10,
+      "url": "#",
+      "rating": "4.6",
+      "productUrl": "#",
+      "image": "10.png",
+      "title": "Диван флоковый “H-64”",
+      "price": "25 990 руб"
+    },
+    {
+      "id": 11,
+      "url": "#",
+      "rating": "4.6",
+      "productUrl": "#",
+      "image": "11.png",
+      "title": "Диван флоковый “H-58”",
+      "price": "23 990 руб"
+
+    },
+    {
+      "id": 12,
+      "url": "#",
+      "rating": "4.6",
+      "productUrl": "#",
+      "image": "12.png",
+      "title": "Диван из кожзама “R-43”",
+      "price": "33 990 руб"
+    }
+  ]
+}
