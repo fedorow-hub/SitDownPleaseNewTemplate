@@ -22,6 +22,7 @@
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
+    height: 400px;
   }
 
   &__pagination {
@@ -159,7 +160,7 @@
       //min-width: 296px;
       .slide-special__img-wrap {
         margin-top: 7px;
-        margin-bottom: 22px;
+        margin-bottom: 17px;
         position: relative;
         overflow: hidden;
         height: 245px;
@@ -183,7 +184,7 @@
   &__button-wrap {
     @media (min-width:$mobileSmall){
       position: absolute;
-      top: 6px;
+      top: 1px;
       right: 35px;
     }
 
@@ -253,8 +254,10 @@
   &__discont-value {
     position: absolute;
     left: 19px;
-    top: 38px;
+    top: 40px;
     color: #fff;
+    font-weight: 700;
+    font-size: 14px;    
   }
 
   &__wrap {
@@ -266,7 +269,7 @@
   &__img-wrap {
     height: 258px;
     text-align: center;
-    margin-bottom: 16px;
+    margin-bottom: 12px;
     padding-top: 37px;
     overflow: hidden;
     transition: transform .3s ease;
@@ -281,7 +284,7 @@
   &__title {
     font-size: 24px;
     line-height: 31px;
-    margin-bottom: 23px;
+    margin-bottom: 20px;
     max-width: 220px;
     //flex: 1 1 auto;
   }
@@ -290,7 +293,8 @@
 
   &__price {
     display: flex;
-    margin-bottom: 23px;
+    align-items: center;
+    /* margin-bottom: 23px; */
   }
 
   // .slide-special__price-new
@@ -335,7 +339,7 @@
   }
 }
 .hight-rating {
-  padding-top: 70px;
+  padding-top: 54px;
 
   // .hight-rating__container
 
@@ -381,7 +385,7 @@
 
   &__footer {
     text-align: center;
-    margin-bottom: 70px;
+    margin-bottom: 68px;
   }
 }
 
@@ -394,7 +398,7 @@
     width: 60px;
     justify-content: space-between;
     padding-left: 15px;
-    margin-bottom: 10px;
+    margin-bottom: 31px;
   }
 
   // .item-rating__rating-value
@@ -406,7 +410,7 @@
   // .item-rating__img-wrap
 
   &__img-wrap {
-    margin-bottom: 16px;
+    margin-bottom: 0px;
     display: flex;
     align-items: end;
     justify-content: center;
@@ -432,27 +436,30 @@
     object-fit: contain;
   }
 
+  &__wrap {
+    padding: 0 14px;
+  }
+
   // .item-rating__title
 
   &__title {
     font-size: 24px;
     line-height: 31px;
-    margin-bottom: 24px;
+    margin-bottom: 22px;
   }
 
   // .item-rating__price
 
   &__price {
     line-height: 21px;
-    margin-bottom: 24px;
-    padding-left: 15px;
+    margin-bottom: 20px;    
   }
 
   // .item-rating__btn
 
-  &__btn {
+  /* &__btn {
     margin-left: 15px;
-  }
+  } */
 
   &__link {
     width: 100%;
@@ -493,7 +500,7 @@
   // .new-collection__body
 
   &__body {
-    padding: 150px 0;
+    padding: 153px 0 150px 0;
     display: flex;
     flex-direction: column;
     max-width: 508px;
@@ -521,7 +528,7 @@
 
   &__text {
     color: #fff;
-    font-weight: 700;
+    font-weight: 400;
     font-size: 48px;
     line-height: 57px;
     margin-bottom: 49px;
@@ -535,7 +542,7 @@
 
   &__button {
     font-weight: 700;
-    padding: 22px 32px;
+    padding: 20px 32px;
     @media (min-width:$mobileSmall){
       max-width: 187px;
     }
@@ -664,7 +671,7 @@
 
   &__link {
     display: flex;
-    width: 113px;
+    width: 106px;
     align-items: center;
     color: $mainPurpur;
     font-weight: 700;
@@ -682,7 +689,7 @@
   }
 }
 .useful {
-  padding-top: 70px;
+  padding-top: 73px;
 
   // .useful__container
 
@@ -704,11 +711,11 @@
 
   // .useful__slider
 
-  &__slider {
+  /* &__slider {
     .swiper__button-wrap {
       top: 20px;
     }
-  }
+  } */
 
   // .useful__wrapper
 
@@ -751,9 +758,9 @@
 
   &__text {
     font-size: 24px;
-    line-height: 32px;
+    line-height: 34px;
     flex: 1 1 auto;
-    margin-bottom: 38px;
+    margin-bottom: 34px;
   }
 }
 
@@ -810,22 +817,24 @@
 
   &__input {
     height: 54px;
-    margin-bottom: 30px;
+    margin-bottom: 29px;
     background-color: #F6F6F6;
     border-radius: 10px;
     padding-left: 18px;
   }
 
   &__button {
-    width: 154px;
-    height: 59px;
+    width: 158px;
+    height: 55px;
     font-weight: 600px;
     padding: 0;
-    margin-bottom: 12px;
+    margin-bottom: 14px;
   }
 
   &__label {        
     cursor: pointer;
+    font-size: 14px;
+    letter-spacing: 1;
   }
 
   &__label a{
@@ -838,7 +847,7 @@
     display: inline-block;
     width: 14px;
     height: 14px;
-    margin-right: 8px;
+    margin-right: 3px;
     border: 1px solid #666;
     border-radius: 2px;
     transition: border-color .3s ease;
@@ -891,6 +900,10 @@
     border: 2px solid #FF862F;
     font-size: 8px;
     color: #FF862F;
+  }
+
+  &__image{
+    padding: 21px 0 0 0;
   }
 
 }

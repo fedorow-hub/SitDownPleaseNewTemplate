@@ -86,7 +86,7 @@ export function formFieldsInit(options = { viewPass: false, autoHeight: false })
 	}
 }
 // Валидация форм
-export let formValidate = {
+export let formValidate = {	
 	getErrors(form) {
 		let error = 0;
 		let formRequiredItems = form.querySelectorAll('*[data-required]');

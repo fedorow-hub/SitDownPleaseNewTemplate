@@ -27,10 +27,9 @@
   &__wrapper-social {
     @include adaptiveValue("margin-right", 250, 0);
     img {
-      margin-bottom: 31px;
+      margin-bottom: 29px;
       transition: scale .3s ease;
     }
-
 
     @media (max-width:$tablet){
       margin-right: 32px;
