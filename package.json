@@ -46,7 +46,7 @@
 		"gulp-webpcss": "latest",
 		"gulp-zip": "latest",
 		"html-webpack-plugin": "latest",
-		"inputmask": "latest",
+		"inputmask": "^5.0.7",
 		"js-datepicker": "latest",
 		"lightgallery": "latest",
 		"load-plugins": "latest",
@@ -73,6 +73,7 @@
 	},
 	"dependencies": {
 		"choices.js": "^10.1.0",
+		"just-validate": "^3.8.1",
 		"simplebar": "latest"
 	}
 }

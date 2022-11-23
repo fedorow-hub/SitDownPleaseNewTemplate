@@ -6,6 +6,9 @@ import { flsModules } from "./modules.js";
 import Choices from 'choices.js'
 //import { template } from "gulp-util";
 
+import JustValidate from 'just-validate';
+
+
 const element = document.querySelector('.select-region');
 const choices = new Choices(element, {
   searchEnabled: false,
@@ -102,6 +105,50 @@ input.oninput = function(){
   }
 }
 
+
+const validate = new JustValidate('#form');
+
+const selectorTell = document.querySelector('input[type="tel"]');
+
+validate
+  .addField('#name', [
+    {
+      rule: 'minLength',
+      value: 3,
+      errorMessage: 'Мало символов',
+    },
+    {
+      rule: 'maxLength',
+      value: 30,
+      errorMessage: 'Много символов',
+    },
+    {
+      rule: 'required',
+      value: true,
+      errorMessage: 'Введите имя',
+    }
+  ])
+  .addField('#phone', [
+    {
+      validator: (value) => {
+        const phone = selectorTell.inputmask.unmaskedvalue();
+        return Number(phone) && phone.length === 10;
+      },
+      errorMessage: 'Введите корректный номер',
+    },
+  ])
+  .addField('#email', [
+
+      {
+        rule: 'required',
+        errorMessage: 'Введите email!',
+      },
+      {
+        rule: 'email',
+        errorMessage: 'Некорректный email!',
+      },
+
+  ]);
 
 
 
