@@ -1,15 +1,19 @@
-.page {
-
-  // .page__header
-
-  &__header {
-    padding-top: 23px;
-    margin-bottom: 30px;
+.header-page {
+  padding-top: 23px;
+  margin-bottom: 30px;
+  @media (max-width:$mobileSmall){
+     display: none;
   }
 
-  // .page__container
+  // .header-page__container
 
   &__container {
+    @media (max-width:$mobile){
+      padding: 0 72px;
+    }
+    @media (max-width:$mobileSmall){
+      padding: 0 12px;
+    }
   }
 
   // .page__breadcrumbs
@@ -57,6 +61,15 @@
     display: grid;
     gap: 32px;
     grid-template-columns: 296px 1fr;
+    @media (max-width:$tablet){
+      display: block;
+    }
+    @media (max-width:$mobile){
+      padding: 0 72px;
+    }
+    @media (max-width:$mobileSmall){
+      padding: 32px 12px 0 12px;
+    }
   }
 
   // .catalog-wrapper__filter
@@ -70,6 +83,14 @@
   }
 }
 .filter-catalog {
+  @media (max-width:$tablet){
+    display: flex;
+    align-items: center;
+    margin-bottom: 32px;
+  }
+  @media (max-width:$mobile){
+    display: block;
+  }
 
   // .filter-catalog__title
 
@@ -77,6 +98,42 @@
     font-size: 18px;
     line-height: 23px;
     margin-bottom: 20px;
+    &_adapt {
+      display: none;
+    }
+    @media (max-width:$tablet){
+      display: none;
+      &_adapt {
+        display: block;
+        font-size: 14px;
+        line-height: 23px;
+        margin-right: 43px;
+        @media (max-width:$mobile){
+          margin-bottom: 14px;
+        }
+      }
+    }
+  }
+
+  // .filter-catalog__body
+
+  &__body {
+    @media (max-width:$tablet){
+      width: 100%;
+      display: grid;
+      gap: 32px;
+      grid-template-columns: repeat(4, 1fr);
+      height: 40px;
+    }
+    @media (max-width:$mobile){
+      grid-template-columns: repeat(2, 1fr);
+      height: 96px;
+      max-width: 405px;
+      row-gap: 17px;
+    }
+    @media (max-width:$mobileSmall){
+      gap: 17px;
+    }
   }
 
   // .filter-catalog__category
@@ -87,6 +144,9 @@
   // .filter-catalog__price
 
   &__price {
+    @media (max-width:$tablet){
+      height: 40px;
+    }
   }
 
   // .filter-catalog__discont
@@ -116,6 +176,13 @@
 
   &__list {
     margin-bottom: 28px;
+    @media (max-width:$tablet){
+      position: absolute;
+      z-index: 10;
+      background-color: #fff;
+      padding: 5px;
+      width: 190px;
+    }
   }
 
   // .category-filter__item
@@ -146,6 +213,12 @@
 
   &__range {
     margin-bottom: 36px;
+    @media (max-width:$tablet){
+      position: absolute;
+      z-index: 10;
+      background-color: #fff;
+      width: 190px;
+    }
   }
 
   // .price-filter__body
@@ -165,43 +238,6 @@
   }
 }
 
-.noUi-target {
-  background: #EAEAEA!important;
-  box-shadow: none!important;
-  border: none!important;
-}
-.noUi-horizontal {
-  height: 3px!important;
-}
-
-.noUi-connect {
-  background: $mainPurpur!important;
-}
-
-.noUi-handle {
-  width: 0!important;
-  height: 0!important;
-  border-left: 7px solid transparent!important;
-  border-right: 7px solid transparent!important;
-  border-bottom: 13px solid $mainPurpur!important;
-  box-shadow: none!important;
-  border-radius: 0!important;
-  right: -7px!important;
-  top: 3px!important;
-  &::before {
-    display: none!important;;
-  }
-  &::after {
-    display: none!important;;
-  }
-}
-
-.noUi-tooltip {
-  bottom: 15px!important;
-  //right: 10px!important;
-  left: 40px!important;
-}
-
 .discont-filter {
 
   // .discont-filter__title
@@ -213,6 +249,13 @@
 
   &__list {
     margin-bottom: 27px;
+    @media (max-width:$tablet){
+      position: absolute;
+      z-index: 10;
+      background-color: #fff;
+      padding: 5px;
+      width: 190px;
+    }
   }
 
   // .discont-filter__item
@@ -240,6 +283,13 @@
 
   &__list {
     margin-bottom: 89px;
+    @media (max-width:$tablet){
+      position: absolute;
+      z-index: 10;
+      background-color: #fff;
+      padding: 5px;
+      width: 190px;
+    }
   }
 
   // .color-filter__item
@@ -262,6 +312,9 @@
   background-color: #333333;
   border-radius: 10px;
   min-height: 360px;
+  @media (max-width:$tablet){
+    display: none;
+  }
 
   // .ad-catalog__image
 
@@ -317,6 +370,15 @@
     font-size: 24px;
     line-height: 32px;
     margin-bottom: 24px;
+    @media (max-width:$tablet){
+      margin-bottom: 16px;
+    }
+    @media (max-width:$mobile){
+      margin-bottom: 23px;
+    }
+    @media (max-width:$mobileSmall){
+      margin-bottom: 12px;
+    }
   }
 
   // .main-catalog__list
@@ -326,7 +388,16 @@
     grid-template-columns: repeat(3, 1fr);
     gap: 32px;
     margin-bottom: 32px;
+    @media (max-width:$mobile){
+      grid-template-columns: repeat(2, 1fr);
+    }
+    @media (max-width:$mobileSmall){
+       gap: 16px;
+    }
     &_second {
+      display: none;
+    }
+    &_third {
       display: none;
     }
   }

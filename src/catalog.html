@@ -7,8 +7,8 @@
 		<div class="wrapper">
 			@@include('html/_header.htm',{})
 			<main class="page">
-        <div class="page__header">
-          <div class="page__container">
+        <div class="page__header header-page">
+          <div class="header-page__container">
             <nav class="page__breadcrumbs breadcrumbs">
               <ul class="breadcrumbs__list">
                 <li class="breadcrumbs__item">
@@ -27,180 +27,206 @@
               <div class="filter-catalog__title">
                 Фильтровать по:
               </div>
-              <div class="filter-catalog__category category-filter">
-                <h3 class="category-filter__title title-filter">Категория</h3>
-                <ul class="category-filter__list">
-                  <li class="category-filter__item">
-                    <label class="category-filter__label">
-                      <input class="visually-hidden category-filter__check checkbox" type="checkbox">
-                      <span></span>
-                      <div>Диваны</div>
-                    </label>
-                  </li>
-                  <li class="category-filter__item">
-                    <label class="category-filter__label">
-                      <input class="visually-hidden category-filter__check checkbox" type="checkbox">
-                      <span></span>
-                      <div>Кресла</div>
-                    </label>
-                  </li>
-                  <li class="category-filter__item">
-                    <label class="category-filter__label">
-                      <input class="visually-hidden category-filter__check checkbox" type="checkbox">
-                      <span></span>
-                      <div>Пуфы</div>
-                    </label>
-                  </li>
-                  <li class="category-filter__item">
-                    <label class="category-filter__label">
-                      <input class="visually-hidden category-filter__check checkbox" type="checkbox">
-                      <span></span>
-                      <div>Кровати</div>
-                    </label>
-                  </li>
-                  <li class="category-filter__item">
-                    <label class="category-filter__label">
-                      <input class="visually-hidden category-filter__check checkbox" type="checkbox">
-                      <span></span>
-                      <div>Тумбы</div>
-                    </label>
-                  </li>
-                  <li class="category-filter__item">
-                    <label class="category-filter__label">
-                      <input class="visually-hidden category-filter__check checkbox" type="checkbox">
-                      <span></span>
-                      <div>Комоды</div>
-                    </label>
-                  </li>
-                  <li class="category-filter__item">
-                    <label class="category-filter__label">
-                      <input class="visually-hidden category-filter__check checkbox" type="checkbox">
-                      <span></span>
-                      <div>Стулья</div>
-                    </label>
-                  </li>
-                  <li class="category-filter__item">
-                    <label class="category-filter__label">
-                      <input class="visually-hidden category-filter__check checkbox" type="checkbox">
-                      <span></span>
-                      <div>Столы</div>
-                    </label>
-                  </li>
-                  <li class="category-filter__item">
-                    <label class="category-filter__label">
-                      <input class="visually-hidden category-filter__check checkbox" type="checkbox">
-                      <span></span>
-                      <div>Аксессуары</div>
-                    </label>
-                  </li>
-                </ul>
+              <div class="filter-catalog__title_adapt">
+                Фильтры:
               </div>
-              <div class="filter-catalog__price price-filter">
-                <div class="price-filter__title title-filter">Цена</div>
-                <div class="price-filter__range">
-                  <div data-range class="price-filter__body">
-                    <div class="price-filter__inputs">
-                      <input data-range-from="0" autocomplete="off" type="text" value="2000" name="form[]" class="price-filter__input">
-                      <input data-range-to="200000" autocomplete="off" type="text" value="150000" name="form[]" class="price-filter__input">
+              <div class="filter-catalog__body">
+                <div data-spollers="1024" class="filter-catalog__category category-filter">
+                  <button type="button" data-spoller class="category-filter__title title-filter">
+                    <span>Категория</span>
+                    <svg width="12" height="8" viewBox="0 0 12 8" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path fill-rule="evenodd" clip-rule="evenodd" d="M5.65674 5.80521L10.5593 0.902607L11.3136 1.65685L5.65674 7.31371L-0.000115871 1.65685L0.754131 0.902607L5.65674 5.80521Z" fill="#A65CF0"/>
+                      </svg>
+                  </button>
+                  <ul class="category-filter__list">
+                    <li class="category-filter__item">
+                      <label class="category-filter__label">
+                        <input class="visually-hidden category-filter__check checkbox" type="checkbox">
+                        <span></span>
+                        <div>Диваны</div>
+                      </label>
+                    </li>
+                    <li class="category-filter__item">
+                      <label class="category-filter__label">
+                        <input class="visually-hidden category-filter__check checkbox" type="checkbox">
+                        <span></span>
+                        <div>Кресла</div>
+                      </label>
+                    </li>
+                    <li class="category-filter__item">
+                      <label class="category-filter__label">
+                        <input class="visually-hidden category-filter__check checkbox" type="checkbox">
+                        <span></span>
+                        <div>Пуфы</div>
+                      </label>
+                    </li>
+                    <li class="category-filter__item">
+                      <label class="category-filter__label">
+                        <input class="visually-hidden category-filter__check checkbox" type="checkbox">
+                        <span></span>
+                        <div>Кровати</div>
+                      </label>
+                    </li>
+                    <li class="category-filter__item">
+                      <label class="category-filter__label">
+                        <input class="visually-hidden category-filter__check checkbox" type="checkbox">
+                        <span></span>
+                        <div>Тумбы</div>
+                      </label>
+                    </li>
+                    <li class="category-filter__item">
+                      <label class="category-filter__label">
+                        <input class="visually-hidden category-filter__check checkbox" type="checkbox">
+                        <span></span>
+                        <div>Комоды</div>
+                      </label>
+                    </li>
+                    <li class="category-filter__item">
+                      <label class="category-filter__label">
+                        <input class="visually-hidden category-filter__check checkbox" type="checkbox">
+                        <span></span>
+                        <div>Стулья</div>
+                      </label>
+                    </li>
+                    <li class="category-filter__item">
+                      <label class="category-filter__label">
+                        <input class="visually-hidden category-filter__check checkbox" type="checkbox">
+                        <span></span>
+                        <div>Столы</div>
+                      </label>
+                    </li>
+                    <li class="category-filter__item">
+                      <label class="category-filter__label">
+                        <input class="visually-hidden category-filter__check checkbox" type="checkbox">
+                        <span></span>
+                        <div>Аксессуары</div>
+                      </label>
+                    </li>
+                  </ul>
+                </div>
+                <div data-spollers="1024" class="filter-catalog__price price-filter">
+                  <button type="button" data-spoller class="price-filter__title title-filter">
+                    <span>Цена</span>
+                    <svg width="12" height="8" viewBox="0 0 12 8" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path fill-rule="evenodd" clip-rule="evenodd" d="M5.65674 5.80521L10.5593 0.902607L11.3136 1.65685L5.65674 7.31371L-0.000115871 1.65685L0.754131 0.902607L5.65674 5.80521Z" fill="#A65CF0"/>
+                      </svg>
+                  </button>
+                  <div class="price-filter__range">
+                    <div class="price-filter__body" data-range>
+                      <div class="price-filter__inputs">
+                        <input class="price-filter__input" data-range-from="0" autocomplete="off" type="text" value="2000" name="form[]">
+                        <input class="price-filter__input" data-range-to="200000" autocomplete="off" type="text" value="150000" name="form[]">
+                      </div>
+                      <div class="price-filter__range" data-range-item></div>
                     </div>
-                    <div data-range-item class="price-filter__range"></div>
                   </div>
                 </div>
+                <div data-spollers="1024" class="filter-catalog__discont discont-filter">
+                  <button type="button" data-spoller class="discont-filter__title title-filter">
+                    <span>Скидка</span>
+                    <svg width="12" height="8" viewBox="0 0 12 8" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path fill-rule="evenodd" clip-rule="evenodd" d="M5.65674 5.80521L10.5593 0.902607L11.3136 1.65685L5.65674 7.31371L-0.000115871 1.65685L0.754131 0.902607L5.65674 5.80521Z" fill="#A65CF0"/>
+                      </svg>
+                  </button>
+                  <ul class="discont-filter__list">
+                    <li class="discont-filter__item">
+                      <label class="discont-filter__label">
+                        <input class="visually-hidden discont-filter__check checkbox" type="checkbox">
+                        <span></span>
+                        <div>Более 5 000</div>
+                      </label>
+                    </li>
+                    <li class="discont-filter__item">
+                      <label class="discont-filter__label">
+                        <input class="visually-hidden discont-filter__check checkbox" type="checkbox">
+                        <span></span>
+                        <div>Менее 5 000</div>
+                      </label>
+                    </li>
+                    <li class="discont-filter__item">
+                      <label class="discont-filter__label">
+                        <input class="visually-hidden discont-filter__check checkbox" type="checkbox">
+                        <span></span>
+                        <div>Не важно</div>
+                      </label>
+                    </li>
+                  </ul>
+                </div>
+                <div data-spollers="1024" class="filter-catalog__color color-filter">
+                  <button type="button" data-spoller class="color-filter__title title-filter">
+                    <span>Цвет</span>
+                    <svg width="12" height="8" viewBox="0 0 12 8" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path fill-rule="evenodd" clip-rule="evenodd" d="M5.65674 5.80521L10.5593 0.902607L11.3136 1.65685L5.65674 7.31371L-0.000115871 1.65685L0.754131 0.902607L5.65674 5.80521Z" fill="#A65CF0"/>
+                      </svg>
+                  </button>
+                  <ul class="color-filter__list">
+                    <li class="color-filter__item">
+                      <label class="color-filter__label">
+                        <input class="visually-hidden color-filter__check checkbox" type="checkbox">
+                        <span></span>
+                        <div>Коричневый</div>
+                      </label>
+                    </li>
+                    <li class="color-filter__item">
+                      <label class="color-filter__label">
+                        <input class="visually-hidden color-filter__check checkbox" type="checkbox">
+                        <span></span>
+                        <div>Черный</div>
+                      </label>
+                    </li>
+                    <li class="color-filter__item">
+                      <label class="color-filter__label">
+                        <input class="visually-hidden color-filter__check checkbox" type="checkbox">
+                        <span></span>
+                        <div>Бежевый</div>
+                      </label>
+                    </li>
+                    <li class="color-filter__item">
+                      <label class="color-filter__label">
+                        <input class="visually-hidden color-filter__check checkbox" type="checkbox">
+                        <span></span>
+                        <div>Серый</div>
+                      </label>
+                    </li>
+                    <li class="color-filter__item">
+                      <label class="color-filter__label">
+                        <input class="visually-hidden color-filter__check checkbox" type="checkbox">
+                        <span></span>
+                        <div>Белый</div>
+                      </label>
+                    </li>
+                    <li class="color-filter__item">
+                      <label class="color-filter__label">
+                        <input class="visually-hidden color-filter__check checkbox" type="checkbox">
+                        <span></span>
+                        <div>Синий</div>
+                      </label>
+                    </li>
+                    <li class="color-filter__item">
+                      <label class="color-filter__label">
+                        <input class="visually-hidden color-filter__check checkbox" type="checkbox">
+                        <span></span>
+                        <div>Оранжевый</div>
+                      </label>
+                    </li>
+                    <li class="color-filter__item">
+                      <label class="color-filter__label">
+                        <input class="visually-hidden color-filter__check checkbox" type="checkbox">
+                        <span></span>
+                        <div>Желтый</div>
+                      </label>
+                    </li>
+                    <li class="color-filter__item">
+                      <label class="color-filter__label">
+                        <input class="visually-hidden color-filter__check checkbox" type="checkbox">
+                        <span></span>
+                        <div>Зеленый</div>
+                      </label>
+                    </li>
+                  </ul>
+                </div>
               </div>
-              <div class="filter-catalog__discont discont-filter">
-                <div class="discont-filter__title title-filter">Скидка</div>
-                <ul class="discont-filter__list">
-                  <li class="discont-filter__item">
-                    <label class="discont-filter__label">
-                      <input class="visually-hidden discont-filter__check checkbox" type="checkbox">
-                      <span></span>
-                      <div>Более 5 000</div>
-                    </label>
-                  </li>
-                  <li class="discont-filter__item">
-                    <label class="discont-filter__label">
-                      <input class="visually-hidden discont-filter__check checkbox" type="checkbox">
-                      <span></span>
-                      <div>Менее 5 000</div>
-                    </label>
-                  </li>
-                  <li class="discont-filter__item">
-                    <label class="discont-filter__label">
-                      <input class="visually-hidden discont-filter__check checkbox" type="checkbox">
-                      <span></span>
-                      <div>Не важно</div>
-                    </label>
-                  </li>
-                </ul>
-              </div>
-              <div class="filter-catalog__color color-filter">
-                <div class="color-filter__title title-filter">Цвет</div>
-                <ul class="color-filter__list">
-                  <li class="color-filter__item">
-                    <label class="color-filter__label">
-                      <input class="visually-hidden color-filter__check checkbox" type="checkbox">
-                      <span></span>
-                      <div>Коричневый</div>
-                    </label>
-                  </li>
-                  <li class="color-filter__item">
-                    <label class="color-filter__label">
-                      <input class="visually-hidden color-filter__check checkbox" type="checkbox">
-                      <span></span>
-                      <div>Черный</div>
-                    </label>
-                  </li>
-                  <li class="color-filter__item">
-                    <label class="color-filter__label">
-                      <input class="visually-hidden color-filter__check checkbox" type="checkbox">
-                      <span></span>
-                      <div>Бежевый</div>
-                    </label>
-                  </li>
-                  <li class="color-filter__item">
-                    <label class="color-filter__label">
-                      <input class="visually-hidden color-filter__check checkbox" type="checkbox">
-                      <span></span>
-                      <div>Серый</div>
-                    </label>
-                  </li>
-                  <li class="color-filter__item">
-                    <label class="color-filter__label">
-                      <input class="visually-hidden color-filter__check checkbox" type="checkbox">
-                      <span></span>
-                      <div>Белый</div>
-                    </label>
-                  </li>
-                  <li class="color-filter__item">
-                    <label class="color-filter__label">
-                      <input class="visually-hidden color-filter__check checkbox" type="checkbox">
-                      <span></span>
-                      <div>Синий</div>
-                    </label>
-                  </li>
-                  <li class="color-filter__item">
-                    <label class="color-filter__label">
-                      <input class="visually-hidden color-filter__check checkbox" type="checkbox">
-                      <span></span>
-                      <div>Оранжевый</div>
-                    </label>
-                  </li>
-                  <li class="color-filter__item">
-                    <label class="color-filter__label">
-                      <input class="visually-hidden color-filter__check checkbox" type="checkbox">
-                      <span></span>
-                      <div>Желтый</div>
-                    </label>
-                  </li>
-                  <li class="color-filter__item">
-                    <label class="color-filter__label">
-                      <input class="visually-hidden color-filter__check checkbox" type="checkbox">
-                      <span></span>
-                      <div>Зеленый</div>
-                    </label>
-                  </li>
-                </ul>
-              </div>
+
               <article class="filter-catalog__ad ad-catalog">
                 <div class="ad-catalog__image -ibg">
                   <img src="@img/oxford-catalog.jpg" alt="Картинка">
@@ -221,7 +247,7 @@
               </article>
             </div>
             <div class="catalog-wrapper__main main-catalog">
-              <h2 class="main-catalog__title">Каталог</h2>
+              <h2 data-da=".catalog-wrapper__container, 1024, 0" class="main-catalog__title">Каталог</h2>
               <ul class="main-catalog__list main-catalog__list_first">
                 <li class="main-catalog__item">
                   <article class="main-catalog__art item-rating" href="#" data-pid="1">
@@ -239,229 +265,133 @@
                     </div>
                   </article>
                 </li>
-                <li>
-                  <article
-                data-pid="2"
-                href="#"
-                class="hight-rating__item item-rating"
-              >
-                <div class="item-rating__rating">
-                  <img
-                    class="item-rating__rating-star"
-                    src="@img/hightRating/rating.svg"
-                    alt="Звезда"
-                  />
-                  <p class="item-rating__rating-value">4,9</p>
-                </div>
-                <a href="#" class="item-rating__img-wrap">
-                  <img
-                    class="item-rating__image"
-                    src="@img/hightRating/2.png"
-                    alt="Диван"
-                  />
-                </a>
-                <div class="item-rating__wrap">
-                  <h3 class="item-rating__title">Диван апартековый “T-75”</h3>
-                  <p class="item-rating__price">69 990 руб</p>
-                  <button class="item-rating__btn btn-light">Купить</button>
-                </div>
-              </article>
+                <li class="main-catalog__item">
+                  <article class="hight-rating__item item-rating" href="#" data-pid="2">
+                    <div class="item-rating__rating">
+                      <img class="item-rating__rating-star" src="@img/hightRating/rating.svg" alt="Звезда">
+                      <p class="item-rating__rating-value">4,9</p>
+                    </div>
+                    <a class="item-rating__img-wrap" href="#">
+                      <img class="item-rating__image" src="@img/hightRating/2.png" alt="Диван">
+                    </a>
+                    <div class="item-rating__wrap">
+                      <h3 class="item-rating__title">Диван апартековый “T-75”</h3>
+                      <p class="item-rating__price">69 990 руб</p>
+                      <button class="item-rating__btn btn-light">Купить</button>
+                    </div>
+                  </article>
                 </li>
-                <li>
-                  <article
-                data-pid="3"
-                href="#"
-                class="hight-rating__item item-rating"
-              >
-                <div class="item-rating__rating">
-                  <img
-                    class="item-rating__rating-star"
-                    src="@img/hightRating/rating.svg"
-                    alt="Звезда"
-                  />
-                  <p class="item-rating__rating-value">4,8</p>
-                </div>
-                <a href="#" class="item-rating__img-wrap">
-                  <img
-                    class="item-rating__image"
-                    src="@img/hightRating/3.png"
-                    alt="Диван"
-                  />
-                </a>
-                <div class="item-rating__wrap">
-                  <h3 class="item-rating__title">Диван тканевый<br>“D-31”</h3>
-                  <p class="item-rating__price">28 490 руб</p>
-                  <button class="item-rating__btn btn-light">Купить</button>
-                </div>
-              </article>
+                <li class="main-catalog__item">
+                  <article class="hight-rating__item item-rating" href="#" data-pid="3">
+                    <div class="item-rating__rating">
+                      <img class="item-rating__rating-star" src="@img/hightRating/rating.svg" alt="Звезда">
+                      <p class="item-rating__rating-value">4,8</p>
+                    </div>
+                    <a class="item-rating__img-wrap" href="#">
+                      <img class="item-rating__image" src="@img/hightRating/3.png" alt="Диван">
+                    </a>
+                    <div class="item-rating__wrap">
+                      <h3 class="item-rating__title">Диван тканевый<br>“D-31”</h3>
+                      <p class="item-rating__price">28 490 руб</p>
+                      <button class="item-rating__btn btn-light">Купить</button>
+                    </div>
+                  </article>
                 </li>
-                <li>
-                  <article
-                data-pid="4"
-                href="#"
-                class="hight-rating__item item-rating"
-              >
-                <div class="item-rating__rating">
-                  <img
-                    class="item-rating__rating-star"
-                    src="@img/hightRating/rating.svg"
-                    alt="Звезда"
-                  />
-                  <p class="item-rating__rating-value">4,8</p>
-                </div>
-                <a href="#" class="item-rating__img-wrap">
-                  <img
-                    class="item-rating__image"
-                    src="@img/hightRating/4.png"
-                    alt="Диван"
-                  />
-                </a>
-                <div class="item-rating__wrap">
-                  <h3 class="item-rating__title">Диван велюровый “Y-68”</h3>
-                  <p class="item-rating__price">22 990 руб</p>
-                  <button class="item-rating__btn btn-light">Купить</button>
-                </div>
-              </article>
+                <li class="main-catalog__item">
+                  <article class="hight-rating__item item-rating" href="#" data-pid="4">
+                    <div class="item-rating__rating">
+                      <img class="item-rating__rating-star" src="@img/hightRating/rating.svg" alt="Звезда">
+                      <p class="item-rating__rating-value">4,8</p>
+                    </div>
+                    <a class="item-rating__img-wrap" href="#">
+                      <img class="item-rating__image" src="@img/hightRating/4.png" alt="Диван">
+                    </a>
+                    <div class="item-rating__wrap">
+                      <h3 class="item-rating__title">Диван велюровый “Y-68”</h3>
+                      <p class="item-rating__price">22 990 руб</p>
+                      <button class="item-rating__btn btn-light">Купить</button>
+                    </div>
+                  </article>
                 </li>
-                <li>
-                  <article
-                data-pid="5"
-                href="#"
-                class="hight-rating__item item-rating"
-              >
-                <div class="item-rating__rating">
-                  <img
-                    class="item-rating__rating-star"
-                    src="@img/hightRating/rating.svg"
-                    alt="Звезда"
-                  />
-                  <p class="item-rating__rating-value">4,8</p>
-                </div>
-                <a href="#" class="item-rating__img-wrap">
-                  <img
-                    class="item-rating__image"
-                    src="@img/hightRating/5.png"
-                    alt="Диван"
-                  />
-                </a>
-                <div class="item-rating__wrap">
-                  <h3 class="item-rating__title">Диван из шинила “W-95”</h3>
-                  <p class="item-rating__price">22 990 руб</p>
-                  <button class="item-rating__btn btn-light">Купить</button>
-                </div>
-              </article>
+                <li class="main-catalog__item">
+                  <article class="hight-rating__item item-rating" href="#" data-pid="5">
+                    <div class="item-rating__rating">
+                      <img class="item-rating__rating-star" src="@img/hightRating/rating.svg" alt="Звезда">
+                      <p class="item-rating__rating-value">4,8</p>
+                    </div>
+                    <a class="item-rating__img-wrap" href="#">
+                      <img class="item-rating__image" src="@img/hightRating/5.png" alt="Диван">
+                    </a>
+                    <div class="item-rating__wrap">
+                      <h3 class="item-rating__title">Диван из шинила “W-95”</h3>
+                      <p class="item-rating__price">22 990 руб</p>
+                      <button class="item-rating__btn btn-light">Купить</button>
+                    </div>
+                  </article>
                 </li>
-                <li>
-                  <article
-                data-pid="6"
-                href="#"
-                class="hight-rating__item hight-rating__item_adapt item-rating"
-              >
-                <div class="item-rating__rating">
-                  <img
-                    class="item-rating__rating-star"
-                    src="@img/hightRating/rating.svg"
-                    alt="Звезда"
-                  />
-                  <p class="item-rating__rating-value">4,8</p>
-                </div>
-                <a href="#" class="item-rating__img-wrap">
-                  <img
-                    class="item-rating__image"
-                    src="@img/hightRating/6.png"
-                    alt="Диван"
-                  />
-                </a>
-                <div class="item-rating__wrap">
-                  <h3 class="item-rating__title">Диван флоковый<br>“G-41”</h3>
-                  <p class="item-rating__price">17 990 руб</p>
-                  <button class="item-rating__btn btn-light">Купить</button>
-                </div>
-              </article>
+                <li class="main-catalog__item">
+                  <article class="main-catalog__art item-rating" href="#" data-pid="1">
+                    <div class="item-rating__rating">
+                      <img class="item-rating__rating-star" src="@img/hightRating/rating.svg" alt="Звезда">
+                      <p class="item-rating__rating-value">4,8</p>
+                    </div>
+                    <a class="item-rating__img-wrap" href="#">
+                      <img class="item-rating__image" src="@img/hightRating/6.png" alt="Диван">
+                    </a>
+                    <div class="item-rating__wrap">
+                      <h3 class="item-rating__title">Диван флоковый<br>“G-41”</h3>
+                      <p class="item-rating__price">17 990 руб</p>
+                      <button class="item-rating__btn btn-light">Купить</button>
+                    </div>
+                  </article>
                 </li>
-                <li>
-                  <article
-                data-pid="7"
-                href="#"
-                class="hight-rating__item hight-rating__item_adapt item-rating"
-              >
-                <div class="item-rating__rating">
-                  <img
-                    class="item-rating__rating-star"
-                    src="@img/hightRating/rating.svg"
-                    alt="Звезда"
-                  />
-                  <p class="item-rating__rating-value">4,8</p>
-                </div>
-                <a href="#" class="item-rating__img-wrap">
-                  <img
-                    class="item-rating__image"
-                    src="@img/hightRating/7.png"
-                    alt="Диван"
-                  />
-                </a>
-                <div class="item-rating__wrap">
-                  <h3 class="item-rating__title">Диван шиниловый “V-43”</h3>
-                  <p class="item-rating__price">19 990 руб</p>
-                  <button class="item-rating__btn btn-light">Купить</button>
-                </div>
-              </article>
+                <li data-da=".main-catalog__list_third,768" class="main-catalog__item">
+                  <article class="main-catalog__art item-rating" href="#" data-pid="1">
+                    <div class="item-rating__rating">
+                      <img class="item-rating__rating-star" src="@img/hightRating/rating.svg" alt="Звезда">
+                      <p class="item-rating__rating-value">4,8</p>
+                    </div>
+                    <a class="item-rating__img-wrap" href="#">
+                      <img class="item-rating__image" src="@img/hightRating/7.png" alt="Диван">
+                    </a>
+                    <div class="item-rating__wrap">
+                      <h3 class="item-rating__title">Диван шиниловый “V-43”</h3>
+                      <p class="item-rating__price">19 990 руб</p>
+                      <button class="item-rating__btn btn-light">Купить</button>
+                    </div>
+                  </article>
                 </li>
-                <li>
-                  <article
-                data-pid="8"
-                href="#"
-                class="hight-rating__item item-rating"
-              >
-                <div class="item-rating__rating">
-                  <img
-                    class="item-rating__rating-star"
-                    src="@img/hightRating/rating.svg"
-                    alt="Звезда"
-                  />
-                  <p class="item-rating__rating-value">4,7</p>
-                </div>
-                <a href="#" class="item-rating__img-wrap">
-                  <img
-                    class="item-rating__image"
-                    src="@img/hightRating/8.png"
-                    alt="Диван"
-                  />
-                </a>
-                <div class="item-rating__wrap">
-                  <h3 class="item-rating__title">Диван велюровый “S-99”</h3>
-                  <p class="item-rating__price">19 990 руб</p>
-                  <button class="item-rating__btn btn-light">Купить</button>
-                </div>
-              </article>
+                <li data-da=".main-catalog__list_third,768" class="main-catalog__item">
+                  <article class="hight-rating__item item-rating" href="#" data-pid="8">
+                    <div class="item-rating__rating">
+                      <img class="item-rating__rating-star" src="@img/hightRating/rating.svg" alt="Звезда">
+                      <p class="item-rating__rating-value">4,7</p>
+                    </div>
+                    <a class="item-rating__img-wrap" href="#">
+                      <img class="item-rating__image" src="@img/hightRating/8.png" alt="Диван">
+                    </a>
+                    <div class="item-rating__wrap">
+                      <h3 class="item-rating__title">Диван велюровый “S-99”</h3>
+                      <p class="item-rating__price">19 990 руб</p>
+                      <button class="item-rating__btn btn-light">Купить</button>
+                    </div>
+                  </article>
                 </li>
-                <li>
-                  <article
-                data-pid="9"
-                href="#"
-                class="hight-rating__item item-rating"
-              >
-                <div class="item-rating__rating">
-                  <img
-                    class="item-rating__rating-star"
-                    src="@img/hightRating/rating.svg"
-                    alt="Звезда"
-                  />
-                  <p class="item-rating__rating-value">4,7</p>
-                </div>
-                <a href="#" class="item-rating__img-wrap">
-                  <img
-                    class="item-rating__image"
-                    src="@img/hightRating/9.png"
-                    alt="Диван"
-                  />
-                </a>
-                <div class="item-rating__wrap">
-                  <h3 class="item-rating__title">Диван из кожзама “F-85”</h3>
-                  <p class="item-rating__price">26 990 руб</p>
-                  <button class="item-rating__btn btn-light">Купить</button>
-                </div>
-              </article>
+                <li data-da=".main-catalog__list_third,768" class="main-catalog__item">
+                  <article class="hight-rating__item item-rating" href="#" data-pid="9">
+                    <div class="item-rating__rating">
+                      <img class="item-rating__rating-star" src="@img/hightRating/rating.svg" alt="Звезда">
+                      <p class="item-rating__rating-value">4,7</p>
+                    </div>
+                    <a class="item-rating__img-wrap" href="#">
+                      <img class="item-rating__image" src="@img/hightRating/9.png" alt="Диван">
+                    </a>
+                    <div class="item-rating__wrap">
+                      <h3 class="item-rating__title">Диван из кожзама “F-85”</h3>
+                      <p class="item-rating__price">26 990 руб</p>
+                      <button class="item-rating__btn btn-light">Купить</button>
+                    </div>
+                  </article>
                 </li>
               </ul>
               <ul class="main-catalog__list main-catalog__list_second">
@@ -481,234 +411,142 @@
                     </div>
                   </article>
                 </li>
-                <li>
-                  <article
-                data-pid="2"
-                href="#"
-                class="hight-rating__item item-rating"
-              >
-                <div class="item-rating__rating">
-                  <img
-                    class="item-rating__rating-star"
-                    src="@img/hightRating/rating.svg"
-                    alt="Звезда"
-                  />
-                  <p class="item-rating__rating-value">4,9</p>
-                </div>
-                <a href="#" class="item-rating__img-wrap">
-                  <img
-                    class="item-rating__image"
-                    src="@img/hightRating/11.png"
-                    alt="Диван"
-                  />
-                </a>
-                <div class="item-rating__wrap">
-                  <h3 class="item-rating__title">Диван флоковый<br>“H-58”</h3>
-                  <p class="item-rating__price">23 990 руб</p>
-                  <button class="item-rating__btn btn-light">Купить</button>
-                </div>
-              </article>
+                <li class="main-catalog__item">
+                  <article class="hight-rating__item item-rating" href="#" data-pid="2">
+                    <div class="item-rating__rating">
+                      <img class="item-rating__rating-star" src="@img/hightRating/rating.svg" alt="Звезда">
+                      <p class="item-rating__rating-value">4,9</p>
+                    </div>
+                    <a class="item-rating__img-wrap" href="#">
+                      <img class="item-rating__image" src="@img/hightRating/11.png" alt="Диван">
+                    </a>
+                    <div class="item-rating__wrap">
+                      <h3 class="item-rating__title">Диван флоковый<br>“H-58”</h3>
+                      <p class="item-rating__price">23 990 руб</p>
+                      <button class="item-rating__btn btn-light">Купить</button>
+                    </div>
+                  </article>
                 </li>
-                <li>
-                  <article
-                data-pid="3"
-                href="#"
-                class="hight-rating__item item-rating"
-              >
-                <div class="item-rating__rating">
-                  <img
-                    class="item-rating__rating-star"
-                    src="@img/hightRating/rating.svg"
-                    alt="Звезда"
-                  />
-                  <p class="item-rating__rating-value">4,8</p>
-                </div>
-                <a href="#" class="item-rating__img-wrap">
-                  <img
-                    class="item-rating__image"
-                    src="@img/hightRating/12.png"
-                    alt="Диван"
-                  />
-                </a>
-                <div class="item-rating__wrap">
-                  <h3 class="item-rating__title">Диван из кожзама<br>“R-43”</h3>
-                  <p class="item-rating__price">33 990 руб</p>
-                  <button class="item-rating__btn btn-light">Купить</button>
-                </div>
-              </article>
+                <li class="main-catalog__item">
+                  <article class="hight-rating__item item-rating" href="#" data-pid="3">
+                    <div class="item-rating__rating">
+                      <img class="item-rating__rating-star" src="@img/hightRating/rating.svg" alt="Звезда">
+                      <p class="item-rating__rating-value">4,8</p>
+                    </div>
+                    <a class="item-rating__img-wrap" href="#">
+                      <img class="item-rating__image" src="@img/hightRating/12.png" alt="Диван">
+                    </a>
+                    <div class="item-rating__wrap">
+                      <h3 class="item-rating__title">Диван из кожзама<br>“R-43”</h3>
+                      <p class="item-rating__price">33 990 руб</p>
+                      <button class="item-rating__btn btn-light">Купить</button>
+                    </div>
+                  </article>
                 </li>
-                <li>
-                  <article
-                data-pid="4"
-                href="#"
-                class="hight-rating__item item-rating"
-              >
-                <div class="item-rating__rating">
-                  <img
-                    class="item-rating__rating-star"
-                    src="@img/hightRating/rating.svg"
-                    alt="Звезда"
-                  />
-                  <p class="item-rating__rating-value">4,8</p>
-                </div>
-                <a href="#" class="item-rating__img-wrap">
-                  <img
-                    class="item-rating__image"
-                    src="@img/hightRating/13.png"
-                    alt="Диван"
-                  />
-                </a>
-                <div class="item-rating__wrap">
-                  <h3 class="item-rating__title">Диван из шинила “С-42”</h3>
-                  <p class="item-rating__price">18 990 руб</p>
-                  <button class="item-rating__btn btn-light">Купить</button>
-                </div>
-              </article>
+                <li  class="main-catalog__item">
+                  <article class="hight-rating__item item-rating" href="#" data-pid="4">
+                    <div class="item-rating__rating">
+                      <img class="item-rating__rating-star" src="@img/hightRating/rating.svg" alt="Звезда">
+                      <p class="item-rating__rating-value">4,8</p>
+                    </div>
+                    <a class="item-rating__img-wrap" href="#">
+                      <img class="item-rating__image" src="@img/hightRating/13.png" alt="Диван">
+                    </a>
+                    <div class="item-rating__wrap">
+                      <h3 class="item-rating__title">Диван из шинила “С-42”</h3>
+                      <p class="item-rating__price">18 990 руб</p>
+                      <button class="item-rating__btn btn-light">Купить</button>
+                    </div>
+                  </article>
                 </li>
-                <li>
-                  <article
-                data-pid="5"
-                href="#"
-                class="hight-rating__item item-rating"
-              >
-                <div class="item-rating__rating">
-                  <img
-                    class="item-rating__rating-star"
-                    src="@img/hightRating/rating.svg"
-                    alt="Звезда"
-                  />
-                  <p class="item-rating__rating-value">4,8</p>
-                </div>
-                <a href="#" class="item-rating__img-wrap">
-                  <img
-                    class="item-rating__image"
-                    src="@img/hightRating/14.png"
-                    alt="Диван"
-                  />
-                </a>
-                <div class="item-rating__wrap">
-                  <h3 class="item-rating__title">Диван велюровый “U-58”</h3>
-                  <p class="item-rating__price">21 990 руб</p>
-                  <button class="item-rating__btn btn-light">Купить</button>
-                </div>
-              </article>
+                <li  class="main-catalog__item">
+                  <article class="hight-rating__item item-rating" href="#" data-pid="5">
+                    <div class="item-rating__rating">
+                      <img class="item-rating__rating-star" src="@img/hightRating/rating.svg" alt="Звезда">
+                      <p class="item-rating__rating-value">4,8</p>
+                    </div>
+                    <a class="item-rating__img-wrap" href="#">
+                      <img class="item-rating__image" src="@img/hightRating/14.png" alt="Диван">
+                    </a>
+                    <div class="item-rating__wrap">
+                      <h3 class="item-rating__title">Диван велюровый “U-58”</h3>
+                      <p class="item-rating__price">21 990 руб</p>
+                      <button class="item-rating__btn btn-light">Купить</button>
+                    </div>
+                  </article>
                 </li>
-                <li>
-                  <article
-                data-pid="6"
-                href="#"
-                class="hight-rating__item hight-rating__item_adapt item-rating"
-              >
-                <div class="item-rating__rating">
-                  <img
-                    class="item-rating__rating-star"
-                    src="@img/hightRating/rating.svg"
-                    alt="Звезда"
-                  />
-                  <p class="item-rating__rating-value">4,8</p>
-                </div>
-                <a href="#" class="item-rating__img-wrap">
-                  <img
-                    class="item-rating__image"
-                    src="@img/hightRating/15.png"
-                    alt="Диван"
-                  />
-                </a>
-                <div class="item-rating__wrap">
-                  <h3 class="item-rating__title">Диван флоковый<br>“F-41”</h3>
-                  <p class="item-rating__price">17 990 руб</p>
-                  <button class="item-rating__btn btn-light">Купить</button>
-                </div>
-              </article>
+                <li  class="main-catalog__item">
+                  <article class="hight-rating__item item-rating" href="#" data-pid="9">
+                    <div class="item-rating__rating">
+                      <img class="item-rating__rating-star" src="@img/hightRating/rating.svg" alt="Звезда">
+                      <p class="item-rating__rating-value">4,8</p>
+                    </div>
+                    <a class="item-rating__img-wrap" href="#">
+                      <img class="item-rating__image" src="@img/hightRating/15.png" alt="Диван">
+                    </a>
+                    <div class="item-rating__wrap">
+                      <h3 class="item-rating__title">Диван флоковый<br>“F-41”</h3>
+                      <p class="item-rating__price">17 990 руб</p>
+                      <button class="item-rating__btn btn-light">Купить</button>
+                    </div>
+                  </article>
                 </li>
-                <li>
-                  <article
-                data-pid="7"
-                href="#"
-                class="hight-rating__item hight-rating__item_adapt item-rating"
-              >
-                <div class="item-rating__rating">
-                  <img
-                    class="item-rating__rating-star"
-                    src="@img/hightRating/rating.svg"
-                    alt="Звезда"
-                  />
-                  <p class="item-rating__rating-value">4,8</p>
-                </div>
-                <a href="#" class="item-rating__img-wrap">
-                  <img
-                    class="item-rating__image"
-                    src="@img/hightRating/16.png"
-                    alt="Диван"
-                  />
-                </a>
-                <div class="item-rating__wrap">
-                  <h3 class="item-rating__title">Диван велюровый “R-85”</h3>
-                  <p class="item-rating__price">34 990 руб</p>
-                  <button class="item-rating__btn btn-light">Купить</button>
-                </div>
-              </article>
+                <li data-da=".main-catalog__list_third,768" class="main-catalog__item">
+                  <article class="main-catalog__art item-rating" href="#" data-pid="1">
+                    <div class="item-rating__rating">
+                      <img class="item-rating__rating-star" src="@img/hightRating/rating.svg" alt="Звезда">
+                      <p class="item-rating__rating-value">4,8</p>
+                    </div>
+                    <a class="item-rating__img-wrap" href="#">
+                      <img class="item-rating__image" src="@img/hightRating/16.png" alt="Диван">
+                    </a>
+                    <div class="item-rating__wrap">
+                      <h3 class="item-rating__title">Диван велюровый “R-85”</h3>
+                      <p class="item-rating__price">34 990 руб</p>
+                      <button class="item-rating__btn btn-light">Купить</button>
+                    </div>
+                  </article>
                 </li>
-                <li>
-                  <article
-                data-pid="8"
-                href="#"
-                class="hight-rating__item item-rating"
-              >
-                <div class="item-rating__rating">
-                  <img
-                    class="item-rating__rating-star"
-                    src="@img/hightRating/rating.svg"
-                    alt="Звезда"
-                  />
-                  <p class="item-rating__rating-value">4,7</p>
-                </div>
-                <a href="#" class="item-rating__img-wrap">
-                  <img
-                    class="item-rating__image"
-                    src="@img/hightRating/17.png"
-                    alt="Диван"
-                  />
-                </a>
-                <div class="item-rating__wrap">
-                  <h3 class="item-rating__title">Диван велюровый “S-44”</h3>
-                  <p class="item-rating__price">19 990 руб</p>
-                  <button class="item-rating__btn btn-light">Купить</button>
-                </div>
-              </article>
+                <li data-da=".main-catalog__list_third,768" class="main-catalog__item">
+                  <article class="hight-rating__item item-rating" href="#" data-pid="8">
+                    <div class="item-rating__rating">
+                      <img class="item-rating__rating-star" src="@img/hightRating/rating.svg" alt="Звезда">
+                      <p class="item-rating__rating-value">4,7</p>
+                    </div>
+                    <a class="item-rating__img-wrap" href="#">
+                      <img class="item-rating__image" src="@img/hightRating/17.png" alt="Диван">
+                    </a>
+                    <div class="item-rating__wrap">
+                      <h3 class="item-rating__title">Диван велюровый “S-44”</h3>
+                      <p class="item-rating__price">19 990 руб</p>
+                      <button class="item-rating__btn btn-light">Купить</button>
+                    </div>
+                  </article>
                 </li>
-                <li>
-                  <article
-                data-pid="9"
-                href="#"
-                class="hight-rating__item item-rating"
-              >
-                <div class="item-rating__rating">
-                  <img
-                    class="item-rating__rating-star"
-                    src="@img/hightRating/rating.svg"
-                    alt="Звезда"
-                  />
-                  <p class="item-rating__rating-value">4,7</p>
-                </div>
-                <a href="#" class="item-rating__img-wrap">
-                  <img
-                    class="item-rating__image"
-                    src="@img/hightRating/18.png"
-                    alt="Диван"
-                  />
-                </a>
-                <div class="item-rating__wrap">
-                  <h3 class="item-rating__title">Диван из шинила “С-80”</h3>
-                  <p class="item-rating__price">20 990 руб</p>
-                  <button class="item-rating__btn btn-light">Купить</button>
-                </div>
-              </article>
+                <li data-da=".main-catalog__list_third,768" class="main-catalog__item">
+                  <article class="hight-rating__item item-rating" href="#" data-pid="9">
+                    <div class="item-rating__rating">
+                      <img class="item-rating__rating-star" src="@img/hightRating/rating.svg" alt="Звезда">
+                      <p class="item-rating__rating-value">4,7</p>
+                    </div>
+                    <a class="item-rating__img-wrap" href="#">
+                      <img class="item-rating__image" src="@img/hightRating/18.png" alt="Диван">
+                    </a>
+                    <div class="item-rating__wrap">
+                      <h3 class="item-rating__title">Диван из шинила “С-80”</h3>
+                      <p class="item-rating__price">20 990 руб</p>
+                      <button class="item-rating__btn btn-light">Купить</button>
+                    </div>
+                  </article>
                 </li>
               </ul>
+              <ul class="main-catalog__list main-catalog__list_third">
+
+              </ul>
               <div class="main-catalog__buttons">
-                <button data-first class="main-catalog__btn main-catalog__btn_first active">1</button>
-                <button data-second class="main-catalog__btn main-catalog__btn_second">2</button>
+                <button class="main-catalog__btn main-catalog__btn_first active" data-first>1</button>
+                <button class="main-catalog__btn main-catalog__btn_second" data-second>2</button>
+                <button class="main-catalog__btn main-catalog__btn_third" data-third>3</button>
               </div>
 
             </div>

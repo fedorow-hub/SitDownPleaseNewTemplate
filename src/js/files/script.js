@@ -18,7 +18,8 @@ const choices = new Choices(element, {
 //spoller
 
 document.addEventListener("click", function(e) {
-  const activeLink = document.querySelector('._spoller-active');
+  //закоментирована собственная реализация споллера
+  /* const activeLink = document.querySelector('._spoller-active');
   const activeList = document.querySelector('._active');
   if(e.target.closest(".spollers__title")) {
     e.target.classList.toggle("_spoller-active");
@@ -40,18 +41,32 @@ document.addEventListener("click", function(e) {
   if (e.target.closest('.hight-rating__show-more')) {
     getProducts(targetElement);
     e.preventDefault();
-  }
+  } */
 
   //переключение страниц каталога
   const firstPage = document.querySelector('.main-catalog__list_first');
   const secondPage = document.querySelector('.main-catalog__list_second');
+  const thirdPage = document.querySelector('.main-catalog__list_third');
 
   const firstButton = document.querySelector('.main-catalog__btn_first');
   const secondButton = document.querySelector('.main-catalog__btn_second');
+  const thirdButton = document.querySelector('.main-catalog__btn_third');
 
+
+  if (e.target.closest('[data-third]')) {
+      thirdPage.style.display = "grid";
+      secondPage.style.display = "none";
+      firstPage.style.display = "none";
+      thirdButton.classList.add('active');
+      firstButton.classList.remove('active');
+      secondButton.classList.remove('active');
+      e.preventDefault();
+    }
   if (e.target.closest('[data-second]')) {
     secondPage.style.display = "grid";
     firstPage.style.display = "none";
+    thirdPage.style.display = "none";
+    thirdButton.classList.remove('active');
     firstButton.classList.remove('active');
     secondButton.classList.add('active');
     e.preventDefault();
@@ -59,8 +74,10 @@ document.addEventListener("click", function(e) {
   if (e.target.closest('[data-first]')) {
     firstPage.style.display = "grid";
     secondPage.style.display = "none";
+    thirdPage.style.display = "none";
     firstButton.classList.add('active');
     secondButton.classList.remove('active');
+    thirdButton.classList.remove('active');
     e.preventDefault();
   }
 })

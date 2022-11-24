@@ -640,16 +640,15 @@
     position: absolute;
     right: 0;
     top: 52px;
-    visibility: hidden;
-    opacity: 0;
+    /* visibility: hidden;
+    opacity: 0; */
     transition: all .3s ease;
     z-index: 1;
 
-    &._active {
+    /* &._active {
       visibility: visible;
       opacity: 1;
-
-    }
+    } */
   }
 
   // .spollers__subject

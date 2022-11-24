@@ -3,7 +3,7 @@ import { flsModules } from "./modules.js";
 
 /* Проверка поддержки webp, добавление класса webp или no-webp для HTML */
 export function isWebp() {
-	// Проверка поддержки webp 
+	// Проверка поддержки webp
 	function testWebP(callback) {
 		let webP = new Image();
 		webP.onload = webP.onerror = function () {
@@ -78,7 +78,7 @@ export let _slideUp = (target, duration = 500, showmore = 0) => {
 			target.style.removeProperty('transition-duration');
 			target.style.removeProperty('transition-property');
 			target.classList.remove('_slide');
-			// Создаем событие 
+			// Создаем событие
 			document.dispatchEvent(new CustomEvent("slideUpDone", {
 				detail: {
 					target: target
@@ -113,7 +113,7 @@ export let _slideDown = (target, duration = 500, showmore = 0) => {
 			target.style.removeProperty('transition-duration');
 			target.style.removeProperty('transition-property');
 			target.classList.remove('_slide');
-			// Создаем событие 
+			// Создаем событие
 			document.dispatchEvent(new CustomEvent("slideDownDone", {
 				detail: {
 					target: target
@@ -277,6 +277,8 @@ export function spollers() {
 		}
 	}
 }
+
+
 // Модуь работы с табами =======================================================================================================================================================================================================================
 /*
 Документация по работе в шаблоне: https://template.fls.guru/template-docs/modul-taby.html
@@ -582,7 +584,7 @@ export function indexInParent(parent, element) {
 	const array = Array.prototype.slice.call(parent.children);
 	return Array.prototype.indexOf.call(array, element);
 };
-// Обработа медиа запросов из атрибутов 
+// Обработа медиа запросов из атрибутов
 export function dataMediaQueries(array, dataSetValue) {
 	// Получение объектов с медиа запросами
 	const media = Array.from(array).filter(function (item, index, self) {
