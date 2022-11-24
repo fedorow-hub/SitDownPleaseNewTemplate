@@ -114,7 +114,7 @@ import "./files/forms/inputmask.js";
 Документация плагина: https://refreshless.com/nouislider/
 Сниппет (HTML): range
 */
-// import "./files/forms/range.js";
+import "./files/forms/range.js";
 
 /* Модуль работы с подсказками (tippy) */
 /*

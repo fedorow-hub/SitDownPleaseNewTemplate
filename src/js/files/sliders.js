@@ -7,7 +7,7 @@
 // Подключаем слайдер Swiper из node_modules
 // При необходимости подключаем дополнительные модули слайдера, указывая их в {} через запятую
 // Пример: { Navigation, Autoplay }
-import Swiper, { Navigation, Pagination } from 'swiper';
+import Swiper, {Autoplay, Navigation, Pagination, EffectFade } from 'swiper';
 /*
 Основниые модули слайдера:
 Navigation, Pagination, Autoplay,
@@ -32,13 +32,20 @@ function initSliders() {
 		new Swiper('.hero__slider', { // Указываем скласс нужного слайдера
 			// Подключаем модули слайдера
 			// для конкретного случая
-			modules: [Pagination],
-			observer: true,
+			modules: [Autoplay, EffectFade, Pagination],
+      allowTouchMove: false,
+      loop: true,
+      effect: 'fade',
+      speed: 10000,
+      autoplay: {
+        delay: 10000
+      },
+			/* observer: true,
 			observeParents: true,
 			slidesPerView: 1,
 			spaceBetween: 0,
 			autoHeight: true,
-			speed: 800,
+			speed: 800, */
 
 			//touchRatio: 0,
 			//simulateTouch: false,
@@ -265,6 +272,7 @@ function initSliders() {
 			}
 		});
 	}
+
 }
 // Скролл на базе слайдера (по классу swiper_scroll для оболочки слайдера)
 function initSlidersScroll() {

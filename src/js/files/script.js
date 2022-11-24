@@ -41,6 +41,28 @@ document.addEventListener("click", function(e) {
     getProducts(targetElement);
     e.preventDefault();
   }
+
+  //переключение страниц каталога
+  const firstPage = document.querySelector('.main-catalog__list_first');
+  const secondPage = document.querySelector('.main-catalog__list_second');
+
+  const firstButton = document.querySelector('.main-catalog__btn_first');
+  const secondButton = document.querySelector('.main-catalog__btn_second');
+
+  if (e.target.closest('[data-second]')) {
+    secondPage.style.display = "grid";
+    firstPage.style.display = "none";
+    firstButton.classList.remove('active');
+    secondButton.classList.add('active');
+    e.preventDefault();
+  }
+  if (e.target.closest('[data-first]')) {
+    firstPage.style.display = "grid";
+    secondPage.style.display = "none";
+    firstButton.classList.add('active');
+    secondButton.classList.remove('active');
+    e.preventDefault();
+  }
 })
 
 //Load More Products
@@ -105,50 +127,52 @@ input.oninput = function(){
   }
 }
 
+if(document.querySelector('#form')){
+  const validate = new JustValidate('#form');
 
-const validate = new JustValidate('#form');
+  const selectorTell = document.querySelector('input[type="tel"]');
 
-const selectorTell = document.querySelector('input[type="tel"]');
-
-validate
-  .addField('#name', [
-    {
-      rule: 'minLength',
-      value: 3,
-      errorMessage: 'Мало символов',
-    },
-    {
-      rule: 'maxLength',
-      value: 30,
-      errorMessage: 'Много символов',
-    },
-    {
-      rule: 'required',
-      value: true,
-      errorMessage: 'Введите имя',
-    }
-  ])
-  .addField('#phone', [
-    {
-      validator: (value) => {
-        const phone = selectorTell.inputmask.unmaskedvalue();
-        return Number(phone) && phone.length === 10;
+  validate
+    .addField('#name', [
+      {
+        rule: 'minLength',
+        value: 3,
+        errorMessage: 'Мало символов',
       },
-      errorMessage: 'Введите корректный номер',
-    },
-  ])
-  .addField('#email', [
-
+      {
+        rule: 'maxLength',
+        value: 30,
+        errorMessage: 'Много символов',
+      },
       {
         rule: 'required',
-        errorMessage: 'Введите email!',
-      },
+        value: true,
+        errorMessage: 'Введите имя',
+      }
+    ])
+    .addField('#phone', [
       {
-        rule: 'email',
-        errorMessage: 'Некорректный email!',
+        validator: (value) => {
+          const phone = selectorTell.inputmask.unmaskedvalue();
+          return Number(phone) && phone.length === 10;
+        },
+        errorMessage: 'Введите корректный номер',
       },
+    ])
+    .addField('#email', [
 
-  ]);
+        {
+          rule: 'required',
+          errorMessage: 'Введите email!',
+        },
+        {
+          rule: 'email',
+          errorMessage: 'Некорректный email!',
+        },
+
+    ]);
+}
+
 
 
 
