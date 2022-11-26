@@ -35,15 +35,15 @@ document.addEventListener("click", function(e) {
       activeLink.classList.remove("_spoller-active");
       activeList.classList.remove("_active");
     }
-  }
+  }*/
 
+  //переключение страниц каталога
   const targetElement = e.target;
   if (e.target.closest('.hight-rating__show-more')) {
     getProducts(targetElement);
     e.preventDefault();
-  } */
+  }
 
-  //переключение страниц каталога
   const firstPage = document.querySelector('.main-catalog__list_first');
   const secondPage = document.querySelector('.main-catalog__list_second');
   const thirdPage = document.querySelector('.main-catalog__list_third');

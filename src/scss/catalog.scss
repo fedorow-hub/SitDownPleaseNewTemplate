@@ -422,6 +422,11 @@
       color: #fff;
       background-color: $mainPurpur;
     }
+    &_third {
+      @media (min-width:$mobile){
+        display: none;
+      }
+    }
   }
 }
 .hight-rating {
