@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+	@@include('html/_head.htm',{
+	"title":"HomePage"
+	})
+	<body>
+		<div class="wrapper">
+			@@include('html/_header.htm',{})
+			<main class="page">
+        <div class="page__header header-page">
+          <div class="header-page__container">
+            <nav class="page__breadcrumbs breadcrumbs">
+              <ul class="breadcrumbs__list">
+                <li class="breadcrumbs__item">
+                  <a class="breadcrumbs__link" href="home.html">Главная /</a>
+                </li>
+                <li class="breadcrumbs__item">
+                  <span class="breadcrumbs__current">Сотрудничество</span>
+                </li>
+              </ul>
+            </nav>
+          </div>
+        </div>
+        <section class="page__collaboration collaboration">
+          <div class="collaboration__container">
+            <h2 class="collaboration__title title">Сотрудничество</h2>
+            <div class="collaboration__provider provider">
+              <h3 class="provider__title small-title">Поставщикам</h3>
+              <div class="provider__content">
+                При планировании обстановки торгового помещения важно обустроить его с комфортом для покупателей: грамотно зонировать, обеспечить эффективную демонстрацию и хранение товаров в зале. Если вам необходимо комплексное оснащение, организация зоны отдыха или отдельные предметы меблировки для поддержания эффективной торговой деятельности, мы поможем выбрать продукцию с учетом нагрузки от поступающего трафика.
+              </div>
+            </div>
+            <div class="collaboration__getting getting">
+              <h3 class="getting__title small-title">Что вы получаете?</h3>
+              <div class="getting__content">
+                <div class="getting__icon"><img src="@img/collaborating/network.svg"/></div>
+                <div class="getting__text">
+                  Мы ценим идеи и вдохновение и предлагаем сотрудничество талантливым дизайнерам и архитекторам. Выпускаемая нами продукция гармонично дополнит любой современный проект.
+                </div>
+                <div class="getting__icon"><img src="@img/collaborating/briefcase.svg"/></div>
+                <div class="getting__text">
+                  Комплексное решение для красивого и функционального обустройства любых пространств.
+                </div>
+                <div class="getting__icon"><img src="@img/collaborating/git-pull-request.svg"/></div>
+                <div class="getting__text">
+                  В ассортименте представлены все товарные группы для того, чтобы воссоздать обстановку в помещениях разных типов: кабинетах, смешанных пространствах, Open Space, гостевых и переговорных комнатах.
+                </div>
+              </div>
+            </div>
+            <div class="collaboration__benefits benefits">
+              <h3 class="benefits__title small-title">
+                Ваши преимущества от сотрудничества
+              </h3>
+              <h4 class="benefits__subtitle">Возможность 1:</h4>
+              <div class="benefits__text">
+                Создавайте незабываемые впечатления. Красиво меблированная фотостудия не оставит клиентов равнодушными, а созданная интерьером атмосфера будет надолго запечатлена на их снимках. Стильная и разноплановая обстановка творческого пространства – ключевая составляющая его успешной деятельности. Позаботьтесь о людях в кадре, а мы поможем правильно выбрать мебель.
+              </div>
+              <h4 class="benefits__subtitle">Возможность 2:</h4>
+              <div class="benefits__text">
+                Мы предлагаем застройщикам, работающим на территории РФ, участие наших специалистов от этапа проектирования обстановки квартир и подбора комплексных интерьерных решений до оптовых поставок мебели. Поможем организовать демонстрационный зал с образцами изделий и материалов на площади нового здания, чтобы покупатель заблаговременно подобрал тот вариант меблировки, который удовлетворит даже самые взыскательные ожидания.
+              </div>
+            </div>
+            <div class="collaboration__guarantees guarantees">
+              <h3 class="guarantees__title small-title">Гарантии</h3>
+              <ol class="guarantees__list">
+                <li class="guarantees__item">
+                  При приемке товара Покупатель должен внимательно проверить его количество, качество и ассортимент на соответствие сопроводительным документам и заказу. После подписания товарного чека Покупатель утрачивает право предъявления претензий, которые можно выявить при приемке товара.
+                </li>
+                <li class="guarantees__item">
+                  На товары, сборка которых производилась покупателем самостоятельно (не специалистами Продавца), гарантийные обязательства Продавца не распространяются. Также гарантия не распространяется на повреждения товара, полученные в ходе самостоятельной доставки и подъема товара. Покупатель не вправе отказаться от товара надлежащего качества, имеющего индивидуально-определенные свойства, т.е. если товар может быть использован исключительно приобретающим его потребителем.
+                </li>
+                <li class="guarantees__item">
+                  Возврат или обмен товара возможен при условии, что сохранена упаковка, товарный вид и потребительские свойства товара, а также товарный и кассовый чеки. В этом случае мы гарантируем вам возврат полной стоимости товара (за вычетом стоимости доставки). В случае отказа от товара при доставке, клиент оплачивает услуги доставки.
+                </li>
+              </ol>
+              <div class="guarantees__term">
+                <div class="guarantees__img">
+                  <img src="@img/collaborating/pencil.png"/>
+                </div>
+                <div class="guarantees__description">
+                  Срок гарантии на нашу мебель составляет от 18 до 60 месяцев
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+      </main>
+			@@include('html/_footer.htm',{})
+		</div>
+		@@include('html/_popup.htm',{})
+		@@include('html/_js.htm',{})
+	</body>
+</html>
