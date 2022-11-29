@@ -1,0 +1,123 @@
+.popup-buy {
+
+  // .popup-buy__wrapper
+
+  &__wrapper {
+
+  }
+
+  // .popup-buy__content
+
+  &__content {
+    position: relative;
+    padding: 30px;
+    background-color: #fff;
+    border-radius: 10px;
+    max-width: 624px;
+  }
+
+  // .popup-buy__close
+
+  &__close {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+  }
+
+  // .popup-buy__body
+
+  &__body {
+    &_recall {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 80px 0;
+    }
+  }
+
+  // .popup-buy__title
+
+  &__title {
+    font-size: 32px;
+    margin-bottom: 8px;
+  }
+
+  // .popup-buy__text
+
+  &__text {
+    max-width: 384px;
+    font-size: 14px;
+    line-height: 19px;
+    margin-bottom: 30px;
+  }
+
+  &__svg {
+    margin-bottom: 32px;
+  }
+
+  // .popup-buy__form
+
+  &__form {
+
+  }
+
+  // .popup-buy__wrap
+
+  &__wrap {
+    position: relative;
+  }
+
+  // .popup-buy__input
+
+  &__input {
+
+  }
+
+  // .popup-buy__button
+
+  &__button {
+    display: block;
+    margin-bottom: 12px;
+  }
+
+  // .popup-buy__label
+
+  &__label {
+  }
+
+  // .popup-buy__check
+
+  &__check {
+  }
+
+  // .popup-buy__accept
+
+  &__accept {
+  }
+}
+.popup {
+
+  // .popup__wrapper
+
+  &__wrapper {
+  }
+
+  // .popup__content
+
+  &__content {
+  }
+
+  // .popup__close
+
+  &__close {
+  }
+
+  // .popup__text
+
+  &__text {
+  }
+}
+.btn-dark {
+}
+.visually-hidden {
+}

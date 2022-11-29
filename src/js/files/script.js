@@ -191,6 +191,41 @@ if(document.querySelector('#form')){
 }
 
 
+if(document.querySelector('#form-popup')){
+  const validate = new JustValidate('#form-popup');
+
+  const selectorTell = document.querySelector('input[type="tel"]');
+
+  validate
+    .addField('#name', [
+      {
+        rule: 'minLength',
+        value: 3,
+        errorMessage: 'Мало символов',
+      },
+      {
+        rule: 'maxLength',
+        value: 30,
+        errorMessage: 'Много символов',
+      },
+      {
+        rule: 'required',
+        value: true,
+        errorMessage: 'Введите имя',
+      }
+    ])
+    .addField('#phone', [
+      {
+        validator: (value) => {
+          const phone = selectorTell.inputmask.unmaskedvalue();
+          return Number(phone) && phone.length === 10;
+        },
+        errorMessage: 'Введите корректный номер',
+      },
+    ])
+    ;
+}
+
 
 
 

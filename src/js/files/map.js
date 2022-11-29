@@ -1,129 +1,187 @@
+const map = document.querySelector('#map');
 
-function mapAdd() {
-	let tag = document.createElement('script');
-	tag.src = "https://maps.google.com/maps/api/js?sensor=false&amp;key=&callback=mapInit";
-	let firstScriptTag = document.getElementsByTagName('script')[0];
-	firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
+if(map) {
+  ymaps.ready(init);
+  function init() {
+    //const mapElem = document.querySelector('#map');
+    const myMap = new ymaps.Map(
+      "map",
+      {
+        center: [55.75484106897436,37.6232404999999],
+        zoom: 14,
+        controls: []
+
+      },
+      {
+        suppressMapOpenBlock: true
+      }
+    );
+
+    myMap.behaviors.disable('scrollZoom');
+
+    // Создание макета балуна на основе Twitter Bootstrap.
+    var MyBalloonLayout = ymaps.templateLayoutFactory.createClass(
+      '<div class="popover top">' +
+        '<a class="close" href="#">&times;</a>' +
+        '<div class="arrow"></div>' +
+        '<div class="popover-inner">' +
+          '$[[options.contentLayout observeSize minWidth=235 maxWidth=235 maxHeight=350]]' +
+        '</div>' +
+      '</div>', {
+      /**
+        * Строит экземпляр макета на основе шаблона и добавляет его в родительский HTML-элемент.
+        * @see https://api.yandex.ru/maps/doc/jsapi/2.1/ref/reference/layout.templateBased.Base.xml#build
+        * @function
+        * @name build
+        */
+      build: function () {
+        this.constructor.superclass.build.call(this);
+
+        this._element = this.getParentElement().querySelector('.popover');
+        this._onCloseClick = this.onCloseClick.bind(this);
+
+        this.applyElementOffset();
+
+        this._element.querySelector('.close').addEventListener('click', this._onCloseClick);
+      },
+
+      /**
+        * Удаляет содержимое макета из DOM.
+        * @see https://api.yandex.ru/maps/doc/jsapi/2.1/ref/reference/layout.templateBased.Base.xml#clear
+        * @function
+        * @name clear
+        */
+      clear: function () {
+        this._element.querySelector('.close').removeEventListener('click', this._onClickClick);
+
+        this.constructor.superclass.clear.call(this);
+      },
+
+      /**
+        * Метод будет вызван системой шаблонов АПИ при изменении размеров вложенного макета.
+        * @see https://api.yandex.ru/maps/doc/jsapi/2.1/ref/reference/IBalloonLayout.xml#event-userclose
+        * @function
+        * @name onSublayoutSizeChange
+        */
+      onSublayoutSizeChange: function () {
+        MyBalloonLayout.superclass.onSublayoutSizeChange.apply(this, arguments);
+
+        if (!this._isElement(this._element)) {
+          return;
+        }
+
+        this.applyElementOffset();
+
+        this.events.fire('shapechange');
+      },
+
+      /**
+        * Сдвигаем балун, чтобы "хвостик" указывал на точку привязки.
+        * @see https://api.yandex.ru/maps/doc/jsapi/2.1/ref/reference/IBalloonLayout.xml#event-userclose
+        * @function
+        * @name applyElementOffset
+        */
+      applyElementOffset: function () {
+        Object.assign(this._element.style, {
+          left: -(this._element.offsetWidth / 2) + 'px',
+          top: -(this._element.offsetHeight + this._element.querySelector('.arrow').offsetHeight) + 'px'
+        });
+      },
+
+      /**
+        * Закрывает балун при клике на крестик, кидая событие "userclose" на макете.
+        * @see https://api.yandex.ru/maps/doc/jsapi/2.1/ref/reference/IBalloonLayout.xml#event-userclose
+        * @function
+        * @name onCloseClick
+        */
+      onCloseClick: function (e) {
+        e.preventDefault();
+
+        this.events.fire('userclose');
+      },
+
+      /**
+        * Используется для автопозиционирования (balloonAutoPan).
+        * @see https://api.yandex.ru/maps/doc/jsapi/2.1/ref/reference/ILayout.xml#getClientBounds
+        * @function
+        * @name getClientBounds
+        * @returns {Number[][]} Координаты левого верхнего и правого нижнего углов шаблона относительно точки привязки.
+        */
+      getShape: function () {
+        if (!this._isElement(this._element)) {
+          return MyBalloonLayout.superclass.getShape.call(this);
+        }
+
+        var style = getComputedStyle(this._element);
+        var position = {
+          left: parseFloat(style.left),
+          top: parseFloat(style.top),
+        };
+
+        return new ymaps.shape.Rectangle(new ymaps.geometry.pixel.Rectangle([
+          [position.left, position.top], [
+            position.left + this._element.offsetWidth,
+            position.top + this._element.offsetHeight + this._element.querySelector('.arrow').offsetHeight
+          ]
+        ]));
+      },
+
+      /**
+        * Проверяем наличие элемента (в ИЕ и Опере его еще может не быть).
+        * @function
+        * @private
+        * @name _isElement
+        * @param {jQuery} [element] Элемент.
+        * @returns {Boolean} Флаг наличия.
+        */
+      _isElement: function (element) {
+        return element && element.querySelector('.arrow');
+      }
+    });
+
+
+    // Создание вложенного макета содержимого балуна.
+    const MyBalloonContentLayout = ymaps.templateLayoutFactory.createClass(
+      '<h3 class="popover-title">$[properties.balloonHeader]</h3>' +
+      '<div class="popover-content">$[properties.balloonContent]</div>'
+    );
+
+    const myPlacemark = window.myPlacemark = new ymaps.Placemark(
+      [55.750615568993275,37.64180899999995],
+      {
+      balloonContent: `<div class="map-contacts__body">
+      <h3 class="map-contacts__title">SitDownPls на Солянке</h3>
+      <div class="map-contacts__address">м. Китай-город, ул. Солянка, д.24</div>
+      <a class="map-contacts__phone" href="tel:+74958854547">
+        <svg width="22" height="22" viewBox="0 0 22 22" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M18.3425 14.0983C17.215 14.0983 16.1242 13.915 15.1067 13.585C14.7858 13.475 14.4283 13.5575 14.1808 13.805L12.7417 15.6108C10.1475 14.3733 7.71833 12.0358 6.42583 9.35L8.21333 7.82833C8.46083 7.57167 8.53417 7.21417 8.43333 6.89333C8.09417 5.87583 7.92 4.785 7.92 3.6575C7.92 3.1625 7.5075 2.75 7.0125 2.75H3.84083C3.34583 2.75 2.75 2.97 2.75 3.6575C2.75 12.1733 9.83583 19.25 18.3425 19.25C18.9933 19.25 19.25 18.6725 19.25 18.1683V15.0058C19.25 14.5108 18.8375 14.0983 18.3425 14.0983Z" fill="#FF862F"/>
+        </svg>
+        <span>+7(495)885-45-47</span>
+      </a>
+      <div class="map-contacts__hours-work">
+        <span>Часы работы:</span> с 10:00 до 21:00
+      </div>
+      <div class="map-contacts__description">
+        <span>Что здесь:</span>
+        шоурум, пункт отгрузки, пункт выдачи, пункт обмена-возврата, сервисный центр
+      </div>
+    </div>`
+    },
+      {
+      balloonShadow: false,
+      balloonLayout: MyBalloonLayout,
+      balloonContentLayout: MyBalloonContentLayout,
+      balloonPanelMaxMapArea: 0,
+
+
+      iconLayout: "default#image",
+      iconImageHref: "img/icon/elefant.svg",
+      iconImageSize: [32, 22],
+      }
+    );
+
+    myMap.geoObjects.add(myPlacemark);
+    //myMap.container.fitToViewport();
+  }
 }
-function mapInit(n = 1) {
-	google.maps.Map.prototype.setCenterWithOffset = function (latlng, offsetX, offsetY) {
-		var map = this;
-		var ov = new google.maps.OverlayView();
-		ov.onAdd = function () {
-			var proj = this.getProjection();
-			var aPoint = proj.fromLatLngToContainerPixel(latlng);
-			aPoint.x = aPoint.x + offsetX;
-			aPoint.y = aPoint.y + offsetY;
-			map.panTo(proj.fromContainerPixelToLatLng(aPoint));
-			//map.setCenter(proj.fromContainerPixelToLatLng(aPoint));
-		}
-		ov.draw = function () { };
-		ov.setMap(this);
-	};
-	var markers = new Array();
-	var infowindow = new google.maps.InfoWindow({
-		//pixelOffset: new google.maps.Size(-230,250)
-	});
-	var locations = [
-		[new google.maps.LatLng(53.819055, 27.8813694)],
-		[new google.maps.LatLng(53.700055, 27.5513694)],
-		[new google.maps.LatLng(53.809055, 27.5813694)],
-		[new google.maps.LatLng(53.859055, 27.5013694)],
-	]
-	var options = {
-		zoom: 10,
-		panControl: false,
-		mapTypeControl: false,
-		center: locations[0][0],
-		styles: [{ "featureType": "landscape.natural", "elementType": "geometry.fill", "stylers": [{ "visibility": "on" }, { "color": "#e0efef" }] }, { "featureType": "poi", "elementType": "geometry.fill", "stylers": [{ "visibility": "on" }, { "hue": "#1900ff" }, { "color": "#c0e8e8" }] }, { "featureType": "road", "elementType": "geometry", "stylers": [{ "lightness": 100 }, { "visibility": "simplified" }] }, { "featureType": "road", "elementType": "labels", "stylers": [{ "visibility": "off" }] }, { "featureType": "transit.line", "elementType": "geometry", "stylers": [{ "visibility": "on" }, { "lightness": 700 }] }, { "featureType": "water", "elementType": "all", "stylers": [{ "color": "#7dcdcd" }] }],
-		scrollwheel: false,
-		mapTypeId: google.maps.MapTypeId.ROADMAP
-	};
-	var map = new google.maps.Map(document.getElementById('map'), options);
-	var icon = {
-		url: 'img/icons/map.svg',
-		scaledSize: new google.maps.Size(18, 20),
-		anchor: new google.maps.Point(9, 10)
-	}
-	for (var i = 0; i < locations.length; i++) {
-		var marker = new google.maps.Marker({
-			icon: icon,
-			position: locations[i][0],
-			map: map,
-		});
-		google.maps.event.addListener(marker, 'click', (function (marker, i) {
-			return function () {
-				for (var m = 0; m < markers.length; m++) {
-					markers[m].setIcon(icon);
-				}
-				var cnt = i + 1;
-				//infowindow.setContent(document.querySelector('.events-map__item_' + cnt).innerHTML);
-				//infowindow.open(map, marker);
-				marker.setIcon(icon);
-				map.setCenterWithOffset(marker.getPosition(), 0, 0);
-				setTimeout(function () {
 
-				}, 10);
-			}
-		})(marker, i));
-		markers.push(marker);
-	}
-	if (n) {
-		var nc = n - 1;
-		setTimeout(function () {
-			google.maps.event.trigger(markers[nc], 'click');
-		}, 500);
-	}
-}
-if (document.querySelector('#map')) {
-	mapAdd();
-}
-
-
-/* YA
-function map(n) {
-	ymaps.ready(init);
-	function init() {
-		// Создание карты.
-		var myMap = new ymaps.Map("map", {
-			// Координаты центра карты.
-			// Порядок по умолчанию: «широта, долгота».
-			// Чтобы не определять координаты центра карты вручную,
-			// воспользуйтесь инструментом Определение координат.
-			controls: [],
-			center: [43.585525, 39.723062],
-			// Уровень масштабирования. Допустимые значения:
-			// от 0 (весь мир) до 19.
-			zoom: 10
-		});
-
-		let myPlacemark = new ymaps.Placemark([43.585525, 39.723062], {
-		},{
-			// Опции.
-			//balloonContentHeader: 'Mistoun',
-			//balloonContentBody: 'Москва, Николоямская 40с1',
-			//balloonContentFooter: '+ 7(495) 507-54 - 90',
-			//hasBalloon: true,
-			//hideIconOnBalloonOpen: true,
-
-			hasBalloon: false,
-			hideIconOnBalloonOpen: false,
-			// Необходимо указать данный тип макета.
-			iconLayout: 'default#imageWithContent',
-			// Своё изображение иконки метки.
-			iconImageHref: 'img/icons/map.svg',
-			// Размеры метки.
-			iconImageSize: [40, 40],
-			// Смещение левого верхнего угла иконки относительно
-			// её "ножки" (точки привязки).
-			iconImageOffset: [-20, -20],
-			// Смещение слоя с содержимым относительно слоя с картинкой.
-			iconContentOffset: [0, 0],
-		});
-		myMap.geoObjects.add(myPlacemark);
-
-		myMap.behaviors.disable('scrollZoom');
-		myMap.behaviors.disable('drag');
-	}
-}
-*/
