@@ -14,7 +14,7 @@
                 <div class="swiper-slide__container">
                   <h1 class="hero__title">Скидка 15% на первую покупку</h1>
                   <button
-                    class="hero__button btn-dark"
+                    class="hero__button hero__button_first btn-dark"
                     data-da=".hero__extra, 559.98"
                   >
                     Получить!
@@ -486,12 +486,12 @@
                 <div class="new-collection__text">
                   Новая коллекция изысканных кресел
                 </div>
-                <button
+                <a href="#"
                   class="new-collection__button btn-dark"
                   data-da=".new-collection__extra, 559.98"
                 >
                   Ознакомиться
-                </button>
+                </a>
               </div>
             </div>
           </div>
@@ -506,9 +506,9 @@
               <article class="top-category__item item-top-category">
                 <div class="item-top-category__body">
                   <div class="item-top-category__descriptions">
-                    <div class="item-top-category__desc">Прямые</div>
-                    <div class="item-top-category__desc">Угловые</div>
-                    <div class="item-top-category__desc">Модульные</div>
+                    <a href="catalog.html" class="item-top-category__desc">Прямые</a>
+                    <a href="catalog.html" class="item-top-category__desc">Угловые</a>
+                    <a href="catalog.html" class="item-top-category__desc">Модульные</a>
                   </div>
                   <div class="item-top-category__title"><h3>Диваны</h3><a href="catalog.html" class="item-top-category__link_adapt">
                     <svg width="22" height="22" viewBox="0 0 22 22" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -537,8 +537,8 @@
               >
                 <div class="item-top-category__body">
                   <div class="item-top-category__descriptions">
-                    <div class="item-top-category__desc">Мягкие</div>
-                    <div class="item-top-category__desc">Кресла-кровати</div>
+                    <a href="catalog.html" class="item-top-category__desc">Мягкие</a>
+                    <a href="catalog.html" class="item-top-category__desc">Кресла-кровати</a>
                   </div>
                   <div class="item-top-category__title"><h3>Кресла</h3><a href="catalog.html" class="item-top-category__link_adapt">
                     <svg width="22" height="22" viewBox="0 0 22 22" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -567,8 +567,8 @@
                 <div class="top-category__item top-category__item_mod item-top-category__body_beds" data-da=".top-category__bottom-row,768,0">
                   <div class="item-top-category__body item-top-category__body_beds">
                     <div class="item-top-category__descriptions">
-                      <div class="item-top-category__desc item-top-category__desc_beds">Односпальные</div>
-                      <div class="item-top-category__desc">Двуспальные</div>
+                      <a href="catalog.html" class="item-top-category__desc item-top-category__desc_beds">Односпальные</a>
+                      <a href="catalog.html" class="item-top-category__desc">Двуспальные</a>
                     </div>
                     <div class="item-top-category__title"><h3>Кровати</h3><a href="catalog.html" class="item-top-category__link_adapt">
                       <svg width="22" height="22" viewBox="0 0 22 22" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -597,8 +597,8 @@
               <article class="top-category__item item-top-category">
                 <div class="item-top-category__body">
                   <div class="item-top-category__descriptions">
-                    <div class="item-top-category__desc">Тумбы</div>
-                    <div class="item-top-category__desc">Комоды</div>
+                    <a href="catalog.html" class="item-top-category__desc">Тумбы</a>
+                    <a href="catalog.html" class="item-top-category__desc">Комоды</a>
                   </div>
                   <div class="item-top-category__title"><h3>Тумбы и комоды</h3><a href="catalog.html" class="item-top-category__link_adapt">
                     <svg width="22" height="22" viewBox="0 0 22 22" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -626,8 +626,8 @@
               <article class="top-category__item item-top-category">
                 <div class="item-top-category__body">
                   <div class="item-top-category__descriptions">
-                    <div class="item-top-category__desc">Деревянные</div>
-                    <div class="item-top-category__desc">Металлокаркас</div>
+                    <a href="catalog.html" class="item-top-category__desc">Деревянные</a>
+                    <a href="catalog.html" class="item-top-category__desc">Металлокаркас</a>
                   </div>
                   <div class="item-top-category__title"><h3>Стулья</h3><a href="catalog.html" class="item-top-category__link_adapt">
                     <svg width="22" height="22" viewBox="0 0 22 22" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -808,7 +808,7 @@
                       type="tel"
                       name="phoneNumber"
                       placeholder="Ваш телефон"
-                      class="feed-back__input"
+                      class="feed-back__input _phone"
                     />
                   </div>
                   <div class="feed-back__wrap">
@@ -818,12 +818,14 @@
                       type="email"
                       name="email"
                       placeholder="Ваш e-mail"
-                      class="feed-back__input"
+                      class="feed-back__input _email"
                     />
                   </div>
-                  <input type="submit" class="feed-back__button btn-dark" />
+                  <!-- <input id="feedBack" type="submit" data-popup="#popup-recall" class="feed-back__button btn-dark" /> -->
+                  <input id="feedBack" type="submit" class="feed-back__button btn-dark" />
                   <label class="feed-back__label">
                     <input
+                    id="feedBackCheck"
                       class="visually-hidden feed-back__check"
                       type="checkbox"
                     />
@@ -845,7 +847,7 @@
       </main>
 			@@include('html/_footer.htm',{})
 		</div>
+    @@include('html/_js.htm',{})
 		@@include('html/_popup.htm',{})
-		@@include('html/_js.htm',{})
 	</body>
 </html>

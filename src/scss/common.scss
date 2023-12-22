@@ -51,7 +51,6 @@
   }
 }
 
-
 .title {
   font-size: 32px;
   @media (max-width:$mobileSmall){
@@ -153,6 +152,7 @@
       line-height: 21px;
       margin-bottom: 16px;
     }
+    user-select: none;
   }
 
   // .item-rating__price
@@ -163,13 +163,8 @@
     @media (max-width:$mobileSmall){
       margin-bottom: 15px;
     }
+    user-select: none;
   }
-
-  // .item-rating__btn
-
-  /* &__btn {
-    margin-left: 15px;
-  } */
 
   &__link {
     width: 100%;

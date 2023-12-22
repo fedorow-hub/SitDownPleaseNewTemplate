@@ -176,8 +176,12 @@ if(document.querySelector('#form')){
         errorMessage: 'Введите корректный номер',
       },
     ])
+    .addField('#feedBackCheck', [
+      {
+        rule: 'required'
+      },
+    ])
     .addField('#email', [
-
         {
           rule: 'required',
           errorMessage: 'Введите email!',
@@ -186,45 +190,87 @@ if(document.querySelector('#form')){
           rule: 'email',
           errorMessage: 'Некорректный email!',
         },
-
     ]);
 }
 
-
-if(document.querySelector('#form-popup')){
-  const validate = new JustValidate('#form-popup');
-
-  const selectorTell = document.querySelector('input[type="tel"]');
-
-  validate
-    .addField('#name', [
-      {
-        rule: 'minLength',
-        value: 3,
-        errorMessage: 'Мало символов',
-      },
-      {
-        rule: 'maxLength',
-        value: 30,
-        errorMessage: 'Много символов',
-      },
-      {
-        rule: 'required',
-        value: true,
-        errorMessage: 'Введите имя',
-      }
-    ])
-    .addField('#phone', [
-      {
-        validator: (value) => {
-          const phone = selectorTell.inputmask.unmaskedvalue();
-          return Number(phone) && phone.length === 10;
-        },
-        errorMessage: 'Введите корректный номер',
-      },
-    ])
-    ;
+/* const form = document.getElementById('form');
+if(form) {
+  form.addEventListener("submit", formSend);
 }
+
+
+async function formSend(e) {
+  e.preventDefault();
+  const popupRecall = document.getElementById('popup-recall');
+  popupRecall.classList.add('_active');
+} */
+
+
+
+
+
+
+//валидация формы в попапе с особенностями из-за того,
+//что при нажатии на кнопку Отправить должен открыться следующий попап
+
+
+const formPopup = document.getElementById('form-popup');
+
+//formPopup.addEventListener('submit', formPopupSend);
+
+
+//const itemsPopup = formPopup.querySelectorAll('._req');
+
+function formValidate() {
+  let error = 0;
+
+  for(let i = 0; i < itemsPopup.length; i++) {
+    formRemoveError(itemsPopup[i]);
+    if(itemsPopup[i].classList.contains('_phone')) {
+      const phone = itemsPopup[i].inputmask.unmaskedvalue();
+      if(phone.length != 10) {
+        formAddError(itemsPopup[i]);
+        itemsPopup[i].insertAdjacentHTML('beforebegin', `<div>Заполните поле</div>`);
+        error++;
+      }
+    }else if(itemsPopup[i].classList.contains('_email')) {
+      if(emailTest(itemsPopup[i])) {
+        formAddError(itemsPopup[i]);
+        error++;
+      }
+    }else if(itemsPopup[i].getAttribute("type") === "checkbox" && itemsPopup[i].checked === false) {
+      formAddError(itemsPopup[i]);
+      itemsPopup[i].insertAdjacentHTML('beforebegin', `<div>Заполните поле</div>`);
+        error++;
+    }else {
+      if(itemsPopup[i].value === '') {
+        formAddError(itemsPopup[i]);
+        itemsPopup[i].insertAdjacentHTML('beforebegin', `<div>Заполните поле</div>`);
+        error++;
+      }
+    }
+  }
+
+  return error;
+}
+
+function formAddError(input) {
+  input.parentElement.classList.add('_error');
+  input.classList.add('_error');
+}
+
+function formRemoveError(input) {
+  input.parentElement.classList.remove('_error');
+  input.classList.remove('_error');
+  if(input.previousSibling) {
+    input.previousSibling.remove();
+  }
+}
+
+function emailTest(input) {
+  return !/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,8})+$/.test(input.value);
+}
+
 
 
 
