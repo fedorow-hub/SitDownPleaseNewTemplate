@@ -150,7 +150,7 @@ if(document.querySelector('#form')){
   const selectorTell = document.querySelector('input[type="tel"]');
 
   validate
-    .addField('#name', [
+    .addField('#name1', [
       {
         rule: 'minLength',
         value: 3,
@@ -167,7 +167,7 @@ if(document.querySelector('#form')){
         errorMessage: 'Введите имя',
       }
     ])
-    .addField('#phone', [
+    .addField('#phone1', [
       {
         validator: (value) => {
           const phone = selectorTell.inputmask.unmaskedvalue();
