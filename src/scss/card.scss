@@ -1,5 +1,5 @@
 .card {
-  &__horisontal{
+  &__horisontal {
     padding-top: 76px;
   }
   &__vertical {
@@ -9,14 +9,14 @@
   // .card__container
 
   &__container {
-    @media (max-width:$tablet){
+    @media (max-width: $tablet) {
       margin-top: -20px;
     }
-    @media (max-width:$mobile){
+    @media (max-width: $mobile) {
       padding: 0 73px;
       margin-top: 20px;
     }
-    @media (max-width:$mobileSmall){
+    @media (max-width: $mobileSmall) {
       padding: 0 12px;
       margin-top: -33px;
     }
@@ -28,17 +28,15 @@
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 25px;
-    @media (max-width:$tablet){
+    @media (max-width: $tablet) {
       grid-template-columns: 5fr 4fr;
     }
-    @media (max-width:$mobile){
+    @media (max-width: $mobile) {
       display: block;
     }
   }
 
   // .card__image
-
-  
 
   &__main-image {
     margin-bottom: 16px;
@@ -47,26 +45,25 @@
     img {
       object-fit: contain;
     }
-    @media (max-width:$tablet){
+    @media (max-width: $tablet) {
       margin-bottom: -4px;
     }
-    @media (max-width:$mobile){
+    @media (max-width: $mobile) {
       margin-bottom: 28px;
     }
-    @media (max-width:$mobileSmall){
-      margin-bottom: -48px;      
+    @media (max-width: $mobileSmall) {
+      margin-bottom: -48px;
     }
   }
 
   &__ribbon {
     margin-bottom: 32px;
     cursor: pointer;
-    @media (max-width:$mobile){
+    @media (max-width: $mobile) {
       display: flex;
       gap: 33px;
     }
-    @media (max-width:$mobileSmall){
-      
+    @media (max-width: $mobileSmall) {
       flex-direction: column;
       gap: 21px;
     }
@@ -79,10 +76,10 @@
   &__small-image {
     height: 81px;
     overflow: hidden;
-    @media (max-width:$mobile){
+    @media (max-width: $mobile) {
       height: 349px;
     }
-    @media (max-width:$mobileSmall){
+    @media (max-width: $mobileSmall) {
       height: 81px;
     }
 
@@ -90,13 +87,13 @@
       max-width: 100%;
       height: 100%;
       object-fit: cover;
-      @media (max-width:$tablet){
+      @media (max-width: $tablet) {
         object-position: -15px;
       }
-      @media (max-width:$mobile){
+      @media (max-width: $mobile) {
         object-position: 0px;
       }
-      @media (max-width:$mobileSmall){
+      @media (max-width: $mobileSmall) {
         object-position: -15px;
       }
     }
@@ -104,19 +101,19 @@
 
   &__vertic-image {
     display: none;
-    @media (max-width:$mobile){
+    @media (max-width: $mobile) {
       display: block;
     }
-    @media (max-width:$mobileSmall){
+    @media (max-width: $mobileSmall) {
       display: none;
     }
   }
 
   &__horizontal-image {
-    @media (max-width:$mobile){
+    @media (max-width: $mobile) {
       display: none;
     }
-    @media (max-width:$mobileSmall){
+    @media (max-width: $mobileSmall) {
       display: block;
     }
   }
@@ -136,22 +133,28 @@
     margin-bottom: 107px;
     font-size: 14px;
     p {
-      &:not(:last-child) {margin-bottom: 8px;}
-      @media (max-width:$mobile){
-        &:not(:last-child) {margin-bottom: 7px;}
+      &:not(:last-child) {
+        margin-bottom: 8px;
       }
-      @media (max-width:$mobileSmall){
-        &:not(:last-child) {margin-bottom: 8px;}
+      @media (max-width: $mobile) {
+        &:not(:last-child) {
+          margin-bottom: 7px;
+        }
+      }
+      @media (max-width: $mobileSmall) {
+        &:not(:last-child) {
+          margin-bottom: 8px;
+        }
       }
     }
-    @media (max-width:$tablet){
+    @media (max-width: $tablet) {
       margin-bottom: 82px;
     }
-    @media (max-width:$mobile){
+    @media (max-width: $mobile) {
       max-width: 492px;
       margin-bottom: 31px;
     }
-    @media (max-width:$mobileSmall){
+    @media (max-width: $mobileSmall) {
       margin-bottom: 0;
     }
   }
@@ -160,7 +163,7 @@
 
   &__conturs {
     padding-top: 113px;
-    @media (max-width:$mobile){
+    @media (max-width: $mobile) {
       max-width: 513px;
     }
     img {
@@ -171,15 +174,15 @@
 
   // .card__feature-sliders
 
-  &__wripper-sliders {
+  /* &__wripper-sliders {
     width: 100%;
-  }
+  } */
 
   &__slider-thumbs {
-    background-color: #F6F6F6;
+    background-color: #f6f6f6;
     padding: 10px 10px;
-    
-    @media (max-width:$mobileSmall){
+
+    @media (max-width: $mobileSmall) {
       width: 100%;
       padding: 6px 10px;
     }
@@ -190,10 +193,10 @@
   &__vertical {
     width: 187px;
     display: none;
-    @media (max-width:$mobile){
+    @media (max-width: $mobile) {
       display: block;
     }
-    @media (max-width:$mobileSmall){
+    @media (max-width: $mobileSmall) {
       display: none;
     }
   }
@@ -202,39 +205,38 @@
 
   &__horisontal {
     display: block;
-    @media (max-width:$mobile){
+    @media (max-width: $mobile) {
       display: none;
     }
-    @media (max-width:$mobileSmall){
+    @media (max-width: $mobileSmall) {
       display: block;
     }
   }
 }
 
-.thumbs-images{
-  &__small-image{    
+.thumbs-images {
+  &__small-image {
     padding-top: 110px;
     cursor: pointer;
-    @media (max-width:$mobile){
+    @media (max-width: $mobile) {
       padding-top: 100px;
     }
-    @media (max-width:$mobileSmall){
+    @media (max-width: $mobileSmall) {
       padding-top: 67px;
     }
   }
 }
 
-
 .feature-product {
   padding-top: 17px;
-  @media (max-width:$tablet){
+  @media (max-width: $tablet) {
     padding-top: 39px;
     padding-left: 6px;
   }
-  @media (max-width:$mobile){
+  @media (max-width: $mobile) {
     padding-top: 31px;
   }
-  @media (max-width:$mobileSmall){
+  @media (max-width: $mobileSmall) {
     padding-top: 0;
     padding-left: 0px;
   }
@@ -242,14 +244,14 @@
 
   &__action {
     margin-bottom: 110px;
-    @media (max-width:$tablet){
+    @media (max-width: $tablet) {
       margin-bottom: 67px;
     }
-    @media (max-width:$mobile){
+    @media (max-width: $mobile) {
       margin-bottom: 0px;
       padding-top: 54px;
     }
-    @media (max-width:$mobileSmall){
+    @media (max-width: $mobileSmall) {
       padding-top: 0;
     }
   }
@@ -262,7 +264,7 @@
       margin-left: 1px;
     }
     margin-bottom: 4px;
-    @media (max-width:$mobileSmall){
+    @media (max-width: $mobileSmall) {
       margin-bottom: 0;
     }
   }
@@ -274,7 +276,7 @@
     line-height: 32px;
     color: #333;
     margin-bottom: 3px;
-    @media (max-width:$mobileSmall){
+    @media (max-width: $mobileSmall) {
       font-size: 16px;
       margin-bottom: 0;
     }
@@ -287,7 +289,7 @@
     line-height: 14px;
     color: #999;
     margin-bottom: 21px;
-    @media (max-width:$mobileSmall){
+    @media (max-width: $mobileSmall) {
       max-width: 207px;
       margin-bottom: 10px;
     }
@@ -300,7 +302,7 @@
     line-height: 47px;
     color: #333;
     margin-bottom: 21px;
-    @media (max-width:$mobileSmall){
+    @media (max-width: $mobileSmall) {
       font-size: 24px;
       margin-bottom: 7px;
     }
@@ -312,7 +314,7 @@
     flex-direction: column;
     align-items: center;
     width: 230px;
-    @media (max-width:$mobileSmall){
+    @media (max-width: $mobileSmall) {
       width: 100%;
     }
   }
@@ -322,7 +324,7 @@
   &__buy-button {
     padding: 17px 30px;
     margin-bottom: 12px;
-    @media (max-width:$mobileSmall){
+    @media (max-width: $mobileSmall) {
       padding: 16px 30px;
     }
   }
@@ -330,7 +332,7 @@
   // .feature-product__add-button
 
   &__add-button {
-    color: #A65CF0;
+    color: #a65cf0;
     line-height: 21px;
   }
 }
@@ -340,10 +342,10 @@
 .table-product {
   display: grid;
   grid-template-columns: 1fr 295px;
-  @media (max-width:$tablet){
+  @media (max-width: $tablet) {
     grid-template-columns: 1fr 217px;
   }
-  @media (max-width:$mobileSmall){
+  @media (max-width: $mobileSmall) {
     grid-template-columns: 1fr;
     row-gap: 2.1px;
   }
@@ -354,13 +356,13 @@
     font-size: 14px;
     padding-top: 10px;
     color: #999;
-    @media (max-width:$mobileSmall){
+    @media (max-width: $mobileSmall) {
       font-size: 10px;
       line-height: 13px;
       padding-top: 7px;
     }
     border-bottom: 1px dotted #999;
-    span{
+    span {
       background-color: white;
     }
   }
@@ -371,7 +373,7 @@
     padding-top: 10px;
     font-size: 14px;
     color: #333;
-    @media (max-width:$mobileSmall){
+    @media (max-width: $mobileSmall) {
       padding-top: 2px;
     }
   }
@@ -380,19 +382,18 @@
 //=========================================================================
 
 .similar-product {
-
   // .similar-product__container
 
   &__container {
     padding: 82px 34px 70px 34px;
     position: relative;
-    @media (max-width:$tablet){
+    @media (max-width: $tablet) {
       padding: 71px 34px 70px 34px;
     }
-    @media (max-width:$mobile){
+    @media (max-width: $mobile) {
       padding: 40px 73px 70px 73px;
     }
-    @media (max-width:$mobileSmall){
+    @media (max-width: $mobileSmall) {
       padding: 74px 12px 70px 12px;
     }
   }
@@ -407,7 +408,7 @@
   }
 }
 .similar-product {
-  @media (max-width:$mobileSmall){
+  @media (max-width: $mobileSmall) {
     &__slider {
       height: 326px;
       display: flex;
@@ -421,15 +422,15 @@
     position: absolute;
     top: 79px;
     right: 33px;
-    @media (max-width:$tablet){
+    @media (max-width: $tablet) {
       top: 69px;
     }
-    @media (max-width:$mobile){
+    @media (max-width: $mobile) {
       top: 38px;
       right: 72px;
     }
-    @media (max-width:$mobileSmall){
-      top:15px;
+    @media (max-width: $mobileSmall) {
+      top: 15px;
       right: 0px;
       position: relative;
       margin: 0 auto;
@@ -442,5 +443,3 @@
     margin-right: 9px;
   }
 }
-
-

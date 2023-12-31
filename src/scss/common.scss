@@ -6,20 +6,27 @@
   background-color: $mainPurpur;
   padding: 20px 50px;
   border-radius: 10px;
-  transition: all .3s ease;
-  @media (max-width:$mobileSmall){
+  transition: all 0.3s ease;
+  @media (max-width: $mobileSmall) {
     width: 100%;
   }
   &:hover {
-    background-color: #C998FB;
+    background-color: #c998fb;
   }
   &:focus {
     outline: none;
-    background-color: #C998FB;
-    box-shadow: inset 0 0 0 2px #7033AC;
+    background-color: #c998fb;
+    box-shadow: inset 0 0 0 2px #7033ac;
   }
   &:active {
-    background-color: #7033AC;
+    background-color: #7033ac;
+  }
+
+  &_popup {
+    @media (max-width: $mobileSmall) {
+      width: 170px;
+      padding: 20px 30px;
+    }
   }
 }
 
@@ -30,22 +37,22 @@
   border: 2px solid $mainPurpur;
   border-radius: 10px;
   width: 129px;
-  transition: all .3s ease;
+  transition: all 0.3s ease;
   &:hover {
     background-color: $mainPurpur;
     color: #fff;
   }
   &:focus {
     outline: none;
-    background-color: #C998FB;
+    background-color: #c998fb;
     color: #fff;
     border: 2px solid $mainPurpur;
   }
   &:active {
-    background-color: #7033AC;
-    border: 2px solid #7033AC;
+    background-color: #7033ac;
+    border: 2px solid #7033ac;
   }
-  @media (max-width:$mobileSmall){
+  @media (max-width: $mobileSmall) {
     width: 108px;
     padding: 7px 13px;
   }
@@ -53,20 +60,20 @@
 
 .title {
   font-size: 32px;
-  @media (max-width:$mobileSmall){
+  @media (max-width: $mobileSmall) {
     font-size: 24px;
   }
 }
 
 .item-rating {
-  background-color: #F7F7F7;
+  background-color: #f7f7f7;
   border-radius: 10px;
   padding: 33px 15px 30px 15px;
   display: flex;
   flex-direction: column;
   flex: 1 1 auto;
   height: 100%;
-  @media (max-width:$mobileSmall){
+  @media (max-width: $mobileSmall) {
     padding: 18px 15px 16px 15px;
   }
 
@@ -78,7 +85,7 @@
     justify-content: space-between;
     padding-left: 15px;
     margin-bottom: 31px;
-    @media (max-width:$mobileSmall){
+    @media (max-width: $mobileSmall) {
       padding-left: 2px;
       width: 37px;
       margin-bottom: 0;
@@ -93,7 +100,7 @@
 
   &__rating-value {
     color: $mainOrange;
-    @media (max-width:$mobileSmall){
+    @media (max-width: $mobileSmall) {
       font-size: 12px;
     }
   }
@@ -109,12 +116,12 @@
     position: relative;
     overflow: hidden;
     width: 100%;
-    transition: transform .3s ease;
+    transition: transform 0.3s ease;
     &:focus {
       outline: none;
       transform: scale(1.05);
     }
-    @media (max-width:$mobileSmall){
+    @media (max-width: $mobileSmall) {
       height: 80px;
     }
   }
@@ -135,7 +142,7 @@
     flex-direction: column;
     flex: 1 1 auto;
     padding: 0 16px;
-    @media (max-width:$mobileSmall){
+    @media (max-width: $mobileSmall) {
       padding: 0;
     }
   }
@@ -147,7 +154,7 @@
     line-height: 31px;
     margin-bottom: 22px;
     flex: 1 1 auto;
-    @media (max-width:$mobileSmall){
+    @media (max-width: $mobileSmall) {
       font-size: 16px;
       line-height: 21px;
       margin-bottom: 16px;
@@ -160,7 +167,7 @@
   &__price {
     line-height: 21px;
     margin-bottom: 24px;
-    @media (max-width:$mobileSmall){
+    @media (max-width: $mobileSmall) {
       margin-bottom: 15px;
     }
     user-select: none;
@@ -179,20 +186,20 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  @media (max-width:$tablet){
+  @media (max-width: $tablet) {
     margin-bottom: 0;
   }
   svg {
     display: none;
   }
-  @media (max-width:$tablet){
+  @media (max-width: $tablet) {
     svg {
       display: inline-block;
       transition: transform 0.3s ease;
     }
     font-weight: 400;
     line-height: 22px;
-    background-color: #F6F6F6;
+    background-color: #f6f6f6;
     padding: 9px 15px;
     border-radius: 10px;
     width: 100%;
@@ -211,25 +218,24 @@
 .small-title {
   font-size: 24px;
   line-height: 32px;
-  @media (max-width:$mobileSmall){
+  @media (max-width: $mobileSmall) {
     font-size: 16px;
     line-height: 22px;
   }
 }
 
 :focus::-webkit-input-placeholder {
-  color: transparent
+  color: transparent;
 }
 
 :focus::-moz-placeholder {
-  color: transparent
+  color: transparent;
 }
 
 :focus:-moz-placeholder {
-  color: transparent
+  color: transparent;
 }
 
 :focus:-ms-input-placeholder {
-  color: transparent
+  color: transparent;
 }
-

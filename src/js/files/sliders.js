@@ -193,7 +193,6 @@ function initSliders() {
 			observer: true,
 			slidesPerView: 1,
 			spaceBetween: 16,
-			speed: 800,
 			loop: false,
 
 			// Кнопки "влево/вправо"

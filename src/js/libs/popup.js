@@ -1,14 +1,11 @@
 // Модуль попапов
-// (c) Фрилансер по жизни, Хмурый Кот
-// Документация по работе в шаблоне: https://template.fls.guru/template-docs/funkcional-popup.html
 // Сниппет (HTML): pl
 
-// Подключение функционала "Чертогов Фрилансера"
-import { isMobile, bodyLockStatus, bodyLock, bodyUnlock, bodyLockToggle, FLS } from "../files/functions.js";
+import { bodyLockStatus, bodyLock, bodyUnlock, FLS } from "../files/functions.js";
 import { flsModules } from "../files/modules.js";
 
 // Класс Popup
-class Popup {
+export class Popup {
 	constructor(options) {
 		let config = {
 			logging: true,
@@ -213,7 +210,7 @@ class Popup {
 
 				// До открытия
 				this.options.on.beforeOpen(this);
-				// Создаем свое событие после открытия попапа
+				// Создаем свое событие до открытия попапа
 				document.dispatchEvent(new CustomEvent("beforePopupOpen", {
 					detail: {
 						popup: this
@@ -321,7 +318,7 @@ class Popup {
 		const buttons = document.querySelector(`[${this.options.attributeOpenButton} = "${classInHash}"]`) ? document.querySelector(`[${this.options.attributeOpenButton} = "${classInHash}"]`) : document.querySelector(`[${this.options.attributeOpenButton} = "${classInHash.replace('.', "#")}"]`);
 		if (buttons && classInHash) this.open(classInHash);
 	}
-	// Утсановка хэша
+	// Установка хэша
 	_setHash() {
 		history.pushState('', '', this.hash);
 	}

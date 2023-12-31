@@ -1,24 +1,23 @@
 .header-page {
   padding-top: 21px;
   margin-bottom: 32px;
-  
-  @media (max-width:$mobileSmall){
+
+  @media (max-width: $mobileSmall) {
     display: none;
   }
 
   // .header-page__container
 
   &__container {
-    @media (max-width:$mobile){
+    @media (max-width: $mobile) {
       padding: 0 72px;
     }
-    @media (max-width:$mobileSmall){
+    @media (max-width: $mobileSmall) {
       padding: 0 12px;
     }
   }
 }
 .breadcrumbs {
-
   // .breadcrumbs__list
 
   &__list {
@@ -30,17 +29,19 @@
   &__item {
     font-size: 14px;
     letter-spacing: 0.3px;
-    &:not(:last-child) {margin-right: 3px;}
+    &:not(:last-child) {
+      margin-right: 3px;
+    }
     span {
-      color: #7033AC;
+      color: #7033ac;
     }
   }
   &__link {
-    transition: all .3s ease;
+    transition: all 0.3s ease;
     @media (any-hover: hover) {
       &:focus {
         outline: none;
-        background-color: #C998FB;
+        background-color: #c998fb;
       }
       &:hover {
         color: $mainPurpur;
@@ -49,31 +50,30 @@
   }
 }
 .catalog-wrapper {
-
   // .catalog-wrapper__container
 
   &__container {
     display: grid;
     gap: 32px;
     grid-template-columns: 296px 1fr;
-    @media (max-width:$tablet){
+    @media (max-width: $tablet) {
       display: block;
     }
-    @media (max-width:$mobile){
+    @media (max-width: $mobile) {
       padding: 0 72px;
     }
-    @media (max-width:$mobileSmall){
+    @media (max-width: $mobileSmall) {
       padding: 32px 12px 0 12px;
     }
   }
 }
 .filter-catalog {
-  @media (max-width:$tablet){
+  @media (max-width: $tablet) {
     display: flex;
     align-items: center;
     margin-bottom: 32px;
   }
-  @media (max-width:$mobile){
+  @media (max-width: $mobile) {
     display: block;
   }
 
@@ -86,14 +86,14 @@
     &_adapt {
       display: none;
     }
-    @media (max-width:$tablet){
+    @media (max-width: $tablet) {
       display: none;
       &_adapt {
         display: block;
         font-size: 14px;
         line-height: 23px;
         margin-right: 43px;
-        @media (max-width:$mobile){
+        @media (max-width: $mobile) {
           margin-bottom: 14px;
         }
       }
@@ -103,20 +103,20 @@
   // .filter-catalog__body
 
   &__body {
-    @media (max-width:$tablet){
+    @media (max-width: $tablet) {
       width: 100%;
       display: grid;
       gap: 32px;
       grid-template-columns: 1fr 1fr 1fr 1fr;
       height: 40px;
     }
-    @media (max-width:$mobile){
+    @media (max-width: $mobile) {
       grid-template-columns: 1fr 1fr;
       height: 96px;
       max-width: 405px;
       row-gap: 17px;
     }
-    @media (max-width:$mobileSmall){
+    @media (max-width: $mobileSmall) {
       gap: 17px;
     }
   }
@@ -125,21 +125,20 @@
 
   &__price {
     position: relative;
-    @media (max-width:$tablet){
+    @media (max-width: $tablet) {
       height: 40px;
     }
-    @media (min-width:$tablet){
+    @media (min-width: $tablet) {
       margin-bottom: 36px;
     }
   }
 }
 .category-filter {
-
   // .category-filter__list
 
   &__list {
     margin-bottom: 28px;
-    @media (max-width:$tablet){
+    @media (max-width: $tablet) {
       position: absolute;
       z-index: 10;
       background-color: #fff;
@@ -151,7 +150,9 @@
   // .category-filter__item
 
   &__item {
-    &:not(:last-child) {margin-bottom: 12px;}
+    &:not(:last-child) {
+      margin-bottom: 12px;
+    }
   }
 
   // .category-filter__label
@@ -160,11 +161,9 @@
     display: flex;
     align-items: center;
   }
-
 }
 
 .price-filter {
-
   // .price-filter__title
 
   &__title {
@@ -174,14 +173,14 @@
   // .price-filter__range
 
   &__range {
-    @media (max-width:$tablet){
+    @media (max-width: $tablet) {
       position: absolute;
       //z-index: 10;
       background-color: #fff;
       width: 190px;
       top: -10px;
     }
-    @media (max-width:$mobile){
+    @media (max-width: $mobile) {
       width: 140px;
     }
   }
@@ -194,12 +193,11 @@
 }
 
 .discont-filter {
-
   // .discont-filter__list
 
   &__list {
     margin-bottom: 27px;
-    @media (max-width:$tablet){
+    @media (max-width: $tablet) {
       position: absolute;
       z-index: 10;
       background-color: #fff;
@@ -211,7 +209,9 @@
   // .discont-filter__item
 
   &__item {
-    &:not(:last-child) {margin-bottom: 12px;}
+    &:not(:last-child) {
+      margin-bottom: 12px;
+    }
   }
 
   // .discont-filter__label
@@ -222,12 +222,11 @@
   }
 }
 .color-filter {
-
   // .color-filter__list
 
   &__list {
     margin-bottom: 89px;
-    @media (max-width:$tablet){
+    @media (max-width: $tablet) {
       position: absolute;
       z-index: 10;
       background-color: #fff;
@@ -239,7 +238,9 @@
   // .color-filter__item
 
   &__item {
-    &:not(:last-child) {margin-bottom: 12px;}
+    &:not(:last-child) {
+      margin-bottom: 12px;
+    }
   }
 
   // .color-filter__label
@@ -248,7 +249,6 @@
     display: flex;
     align-items: center;
   }
-
 }
 .ad-catalog {
   display: flex;
@@ -256,7 +256,7 @@
   background-color: #333333;
   border-radius: 10px;
   min-height: 360px;
-  @media (max-width:$tablet){
+  @media (max-width: $tablet) {
     display: none;
   }
 
@@ -277,7 +277,7 @@
   &__title {
     font-weight: 900;
     font-family: "PlayfairDisplay";
-    color: #D5B986;
+    color: #d5b986;
     font-size: 24px;
     line-height: 32px;
   }
@@ -312,13 +312,13 @@
 
   &__title {
     margin-bottom: 24px;
-    @media (max-width:$tablet){
+    @media (max-width: $tablet) {
       margin-bottom: 16px;
     }
-    @media (max-width:$mobile){
+    @media (max-width: $mobile) {
       margin-bottom: 23px;
     }
-    @media (max-width:$mobileSmall){
+    @media (max-width: $mobileSmall) {
       margin-bottom: 12px;
     }
   }
@@ -330,10 +330,10 @@
     grid-template-columns: 1fr 1fr 1fr;
     gap: 32px;
     margin-bottom: 32px;
-    @media (max-width:$mobile){
+    @media (max-width: $mobile) {
       grid-template-columns: 1fr 1fr;
     }
-    @media (max-width:$mobileSmall){
+    @media (max-width: $mobileSmall) {
       gap: 16px;
     }
     &_second {
@@ -353,17 +353,18 @@
     border: 2px solid $mainPurpur;
     border-radius: 10px;
     color: $mainPurpur;
-    &:not(:last-child) {margin-right: 12px;}
+    &:not(:last-child) {
+      margin-right: 12px;
+    }
     margin-bottom: 69px;
     &.active {
       color: #fff;
       background-color: $mainPurpur;
     }
     &_third {
-      @media (min-width:$mobile){
+      @media (min-width: $mobile) {
         display: none;
       }
     }
   }
 }
-

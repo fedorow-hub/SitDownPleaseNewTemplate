@@ -2,6 +2,7 @@
 import { isMobile } from "./functions.js";
 // Подключение списка активных модулей
 import { flsModules } from "./modules.js";
+import { Popup } from "../libs/popup.js";
 
 import Choices from 'choices.js'
 //import { template } from "gulp-util";
@@ -201,92 +202,64 @@ if(document.querySelector('#form')){
           rule: 'email',
           errorMessage: 'Некорректный email!',
         },
-    ]);
+    ])
+    .onSuccess(( event ) => {
+      formSend1(event);
+  });
 }
 
-/* const form = document.getElementById('form');
-if(form) {
-  form.addEventListener("submit", formSend);
+if(document.querySelector('#form-popup')){
+  const validate2 = new JustValidate('#form-popup');
+
+  const selectorTell2 = document.querySelector('input[type="tel"]');
+
+  validate2
+    .addField('#name2', [
+      {
+        rule: 'minLength',
+        value: 3,
+        errorMessage: 'Мало символов',
+      },
+      {
+        rule: 'maxLength',
+        value: 30,
+        errorMessage: 'Много символов',
+      },
+      {
+        rule: 'required',
+        value: true,
+        errorMessage: 'Введите имя',
+      }
+    ])
+    .addField('#phone2', [
+      {
+        validator: (value) => {
+          const phone = selectorTell2.inputmask.unmaskedvalue();
+          return Number(phone) && phone.length === 10;
+        },
+        errorMessage: 'Введите корректный номер',
+      },
+    ])
+    .addField('#popupCheckbox', [
+      {
+        rule: 'required'
+      },
+    ])
+    .onSuccess(( event ) => {
+      formSend2(event);
+  });
 }
 
-
-async function formSend(e) {
+async function formSend1(e) {
   e.preventDefault();
-  const popupRecall = document.getElementById('popup-recall');
-  popupRecall.classList.add('_active');
-} */
-
-
-
-
-
-
-//валидация формы в попапе с особенностями из-за того,
-//что при нажатии на кнопку Отправить должен открыться следующий попап
-
-
-const formPopup = document.getElementById('form-popup');
-
-//formPopup.addEventListener('submit', formPopupSend);
-
-
-//const itemsPopup = formPopup.querySelectorAll('._req');
-
-function formValidate() {
-  let error = 0;
-
-  for(let i = 0; i < itemsPopup.length; i++) {
-    formRemoveError(itemsPopup[i]);
-    if(itemsPopup[i].classList.contains('_phone')) {
-      const phone = itemsPopup[i].inputmask.unmaskedvalue();
-      if(phone.length != 10) {
-        formAddError(itemsPopup[i]);
-        itemsPopup[i].insertAdjacentHTML('beforebegin', `<div>Заполните поле</div>`);
-        error++;
-      }
-    }else if(itemsPopup[i].classList.contains('_email')) {
-      if(emailTest(itemsPopup[i])) {
-        formAddError(itemsPopup[i]);
-        error++;
-      }
-    }else if(itemsPopup[i].getAttribute("type") === "checkbox" && itemsPopup[i].checked === false) {
-      formAddError(itemsPopup[i]);
-      itemsPopup[i].insertAdjacentHTML('beforebegin', `<div>Заполните поле</div>`);
-        error++;
-    }else {
-      if(itemsPopup[i].value === '') {
-        formAddError(itemsPopup[i]);
-        itemsPopup[i].insertAdjacentHTML('beforebegin', `<div>Заполните поле</div>`);
-        error++;
-      }
-    }
-  }
-
-  return error;
+  document.querySelector('#form').reset();
+  const popup = new Popup();
+  popup.open('#popup-recall');
 }
 
-function formAddError(input) {
-  input.parentElement.classList.add('_error');
-  input.classList.add('_error');
+async function formSend2(e) {
+  e.preventDefault();
+  document.querySelector('#form-popup').reset();
+  const popup = new Popup();
+  popup.open('#popup-recall');
 }
-
-function formRemoveError(input) {
-  input.parentElement.classList.remove('_error');
-  input.classList.remove('_error');
-  if(input.previousSibling) {
-    input.previousSibling.remove();
-  }
-}
-
-function emailTest(input) {
-  return !/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,8})+$/.test(input.value);
-}
-
-
-
-
-
-
-
-
-

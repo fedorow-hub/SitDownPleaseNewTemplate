@@ -1,15 +1,14 @@
 //====================================================================================================
 .footer {
-
   // .footer__top
 
   &__top {
-    background-color: #EAEAEA;
+    background-color: #eaeaea;
     padding: 24px 0 20px 0;
-    @media (max-width:$mobile){
+    @media (max-width: $mobile) {
       padding: 27px 0 25px 0;
     }
-    @media (max-width:$mobileSmall){
+    @media (max-width: $mobileSmall) {
       padding: 23px 0 25px 0;
     }
   }
@@ -19,11 +18,11 @@
   &__container {
     display: flex;
     justify-content: space-between;
-    @media (max-width:$mobile){
+    @media (max-width: $mobile) {
       display: block;
       padding: 0 72px;
     }
-    @media (max-width:$mobileSmall){
+    @media (max-width: $mobileSmall) {
       padding: 0 12px;
     }
   }
@@ -34,24 +33,24 @@
     @include adaptiveValue("margin-right", 250, 0);
     img {
       margin-bottom: 29px;
-      transition: scale .3s ease;
-      @media (max-width:$mobile){
+      transition: scale 0.3s ease;
+      @media (max-width: $mobile) {
         margin-bottom: 0;
       }
-      @media (max-width:$mobileSmall){
+      @media (max-width: $mobileSmall) {
         margin-bottom: 27px;
       }
     }
 
-    @media (max-width:$tablet){
+    @media (max-width: $tablet) {
       margin-right: 32px;
     }
-    @media (max-width:$mobile){
+    @media (max-width: $mobile) {
       display: flex;
       justify-content: space-between;
       margin-right: 0;
     }
-    @media (max-width:$mobileSmall){
+    @media (max-width: $mobileSmall) {
       display: block;
       text-align: center;
     }
@@ -60,7 +59,7 @@
   &__logo {
     margin-bottom: 31px;
     img {
-      transition: all .3s ease;
+      transition: all 0.3s ease;
     }
     &:focus {
       outline: none;
@@ -68,7 +67,7 @@
         transform: scale(1.1);
       }
     }
-    @media (max-width:$mobile){
+    @media (max-width: $mobile) {
       margin-bottom: 25px;
     }
   }
@@ -78,15 +77,17 @@
   &__socials {
     display: flex;
     flex-wrap: wrap;
-    @media (max-width:$mobile){
+    @media (max-width: $mobile) {
       margin-top: -5px;
     }
-    @media (max-width:$mobileSmall){
+    @media (max-width: $mobileSmall) {
       justify-content: center;
       margin-bottom: 24px;
     }
     li {
-      &:not(:last-child) {margin-right: 20px;}
+      &:not(:last-child) {
+        margin-right: 20px;
+      }
     }
   }
 
@@ -97,14 +98,16 @@
     height: 36px;
     text-align: center;
     padding-top: 3px;
-    &:not(:last-child) {margin-right: 14px;}
-    transition: background-color .3s ease;
+    &:not(:last-child) {
+      margin-right: 14px;
+    }
+    transition: background-color 0.3s ease;
     path {
-      transition: fill .3s ease;
+      transition: fill 0.3s ease;
     }
     &:focus {
       outline: none;
-      background-color: #C998FB;
+      background-color: #c998fb;
       path {
         fill: #fff;
       }
@@ -124,7 +127,7 @@
     justify-content: space-between;
     width: 100%;
     flex-wrap: wrap;
-    @media (max-width:$mobileSmall){
+    @media (max-width: $mobileSmall) {
       display: grid;
       width: 100%;
       grid-template-columns: 1fr 1fr;
@@ -136,18 +139,19 @@
   // .footer__bottom
 
   &__bottom {
-    background-color: #F7F7F7;
+    background-color: #f7f7f7;
     padding: 5px 0;
     text-align: center;
     font-size: 14px;
   }
 }
 .list-links {
-
   // .list-links__info
 
   &__info {
-    &:not(:last-child) {margin-right: 10px;}
+    &:not(:last-child) {
+      margin-right: 10px;
+    }
   }
 
   // .list-links__title
@@ -160,19 +164,21 @@
 
   &__link {
     display: block;
-    transition: all .3s ease;
+    transition: all 0.3s ease;
     font-size: 14px;
-    &:not(:last-child) {margin-bottom: 10px;}
+    &:not(:last-child) {
+      margin-bottom: 10px;
+    }
     color: #999999;
     &:focus:not(:active) {
       outline: none;
-      background-color: #EBD1FF;
+      background-color: #ebd1ff;
     }
     &:hover {
       color: $mainPurpur;
     }
     &:active {
-      color: #7033AC;
+      color: #7033ac;
     }
   }
 }

@@ -3,11 +3,11 @@
   background-color: $greyLight;
 
   &__container {
-    @media (max-width:$mobile) {
+    @media (max-width: $mobile) {
       padding: 0 72px;
     }
 
-    @media (max-width:$mobileSmall) {
+    @media (max-width: $mobileSmall) {
       display: flex;
       justify-content: center;
       padding: 12px 12px;
@@ -19,7 +19,7 @@
   background-color: $greyLight;
   padding: 7px 0;
 
-  @media (max-width:$mobileSmall) {
+  @media (max-width: $mobileSmall) {
     background-color: #fff;
     border-bottom: 1px solid $greyLight;
   }
@@ -36,7 +36,7 @@
       padding: 0 72px;
     }
 
-    @media (max-width:$mobileSmall) {
+    @media (max-width: $mobileSmall) {
       padding: 0 12px;
     }
   }
@@ -45,12 +45,12 @@
     display: flex;
     align-items: center;
 
-    @media (max-width:$tablet) {
+    @media (max-width: $tablet) {
       justify-content: space-between;
       padding: 18px 0;
     }
 
-    @media (max-width:370px) {
+    @media (max-width: 370px) {
       flex-direction: column;
       align-items: start;
       padding: 9px 0;
@@ -63,7 +63,7 @@
     z-index: 3;
     min-width: 208px;
 
-    @media (max-width:370px) {
+    @media (max-width: 370px) {
       margin-bottom: 16px;
     }
   }
@@ -101,22 +101,22 @@
     }
 
     &:focus:not(:active) {
-      background-color: #FFF5D1;
+      background-color: #fff5d1;
     }
 
     &:hover {
-      color: #FFBD59;
+      color: #ffbd59;
 
       path {
-        fill: #FFBD59;
+        fill: #ffbd59;
       }
     }
 
     &:active {
-      color: #BB370E;
+      color: #bb370e;
 
       path {
-        fill: #BB370E;
+        fill: #bb370e;
       }
     }
   }
@@ -128,7 +128,7 @@
     align-items: center;
     flex-wrap: wrap;
 
-    @media (max-width:$mobile) {
+    @media (max-width: $mobile) {
       justify-content: space-between;
     }
 
@@ -148,7 +148,7 @@
     &:not(:last-child) {
       @include adaptiveValue("margin-right", 65, -50);
 
-      @media (max-width:$tablet) {
+      @media (max-width: $tablet) {
         @include adaptiveValue("margin-right", 113, -40);
       }
 
@@ -162,16 +162,16 @@
 
       &:focus:not(:active) {
         outline: none;
-        background-color: #EBD1FF;
-        color: #7033AC;
+        background-color: #ebd1ff;
+        color: #7033ac;
       }
 
       &:hover {
-        color: #A65CF0;
+        color: #a65cf0;
       }
 
       &:active {
-        color: #7033AC;
+        color: #7033ac;
       }
     }
   }
@@ -199,7 +199,7 @@
 //====================================================================================================
 
 .medium-header {
-  @media (max-width:$mobileSmall) {
+  @media (max-width: $mobileSmall) {
     border-bottom: 1px solid $greyLight;
     margin-bottom: 16px;
   }
@@ -212,12 +212,12 @@
     padding: 32px 36px;
     justify-content: space-between;
 
-    @media (max-width:$mobile) {
+    @media (max-width: $mobile) {
       justify-content: space-between;
       padding: 28px 72px;
     }
 
-    @media (max-width:$mobileSmall) {
+    @media (max-width: $mobileSmall) {
       padding: 6px 12px;
     }
   }
@@ -227,7 +227,7 @@
   &__logo {
     @include adaptiveValue("margin-right", 141, -80);
 
-    @media (max-width:$tablet) {
+    @media (max-width: $tablet) {
       @include adaptiveValue("margin-right", 125, -80);
     }
 
@@ -238,13 +238,13 @@
       transform: scale(1.05);
     }
 
-    @media (max-width:$mobile) {
+    @media (max-width: $mobile) {
       @include adaptiveValue("margin-right", 0, 0);
       padding-left: 75px;
       z-index: 3;
     }
 
-    @media (max-width:$mobileSmall) {
+    @media (max-width: $mobileSmall) {
       padding-left: 0;
       width: 187px;
     }
@@ -253,14 +253,14 @@
   &__wrapper {
     width: 100%;
 
-    @media (max-width:$mobile) {
+    @media (max-width: $mobile) {
       z-index: 2;
       display: flex;
       position: fixed;
       top: 182px;
       left: -100%;
       background-color: #fff;
-      transition: left .3s ease;
+      transition: left 0.3s ease;
 
       .menu-open & {
         left: 0;
@@ -269,7 +269,7 @@
       //overflow: auto;
     }
 
-    @media (max-width:$mobileSmall) {
+    @media (max-width: $mobileSmall) {
       flex-direction: column;
       top: 0;
       padding-top: 182px;
@@ -285,7 +285,7 @@
     justify-content: space-between;
     padding-top: 2px;
 
-    @media (max-width:$mobile) {
+    @media (max-width: $mobile) {
       z-index: 2;
       display: grid;
       grid-template-columns: 150px 150px;
@@ -298,14 +298,14 @@
       overflow: auto;
     }
 
-    @media (max-width:$mobileSmall) {
+    @media (max-width: $mobileSmall) {
       display: flex;
       flex-direction: column;
       padding-left: 12px;
       padding-bottom: 50px;
 
       &::before {
-        content: '';
+        content: "";
         position: absolute;
         top: 0px;
         left: 0;
@@ -316,8 +316,10 @@
     }
   }
 
-  &__item{
-    &:not(:last-child) {margin-right: 5px;}
+  &__item {
+    &:not(:last-child) {
+      margin-right: 5px;
+    }
   }
 
   // .medium-header__link
@@ -327,31 +329,29 @@
 
     //padding: 3px;
     &:hover {
-      color: #A65CF0;
+      color: #a65cf0;
     }
 
     &:focus:not(:active) {
       outline: none;
-      background-color: #EBD1FF;
+      background-color: #ebd1ff;
     }
 
-    @media (max-width:$mobileSmall) {
+    @media (max-width: $mobileSmall) {
       display: inline;
     }
   }
 
-
-
   &__elefant {
     display: none;
 
-    @media (max-width:$mobile) {
+    @media (max-width: $mobile) {
       display: block;
       width: 160px;
       z-index: 2;
     }
 
-    @media (max-width:$mobileSmall) {
+    @media (max-width: $mobileSmall) {
       display: none;
     }
   }
@@ -360,18 +360,17 @@
 //====================================================================================================
 
 .bottom-header {
-
   // .bottom-header__container
 
   &__container {
     display: flex;
     align-items: center;
 
-    @media (max-width:$mobile) {
+    @media (max-width: $mobile) {
       padding: 0 72px;
     }
 
-    @media (max-width:$mobileSmall) {
+    @media (max-width: $mobileSmall) {
       padding: 0 12px;
     }
   }
@@ -390,7 +389,7 @@
 
     width: 100%;
 
-    @media (max-width:$mobileSmall) {
+    @media (max-width: $mobileSmall) {
       flex-direction: column;
     }
   }
@@ -400,7 +399,7 @@
   &__form {
     flex: 1 1 auto;
 
-    @media (max-width:$mobileSmall) {
+    @media (max-width: $mobileSmall) {
       width: 100%;
     }
   }
@@ -412,12 +411,12 @@
     height: 60px;
     border-top-left-radius: 10px;
     border-bottom-left-radius: 10px;
-    transition: all .3s ease;
+    transition: all 0.3s ease;
 
     &:focus {
       outline: none;
       box-shadow: inset 0 0 0 2px $mainPurpur;
-      background-color: #F8EFFF;
+      background-color: #f8efff;
 
       &::placeholder {
         color: transparent;
@@ -425,10 +424,10 @@
     }
 
     &:hover {
-      background-color: #EAEAEA;
+      background-color: #eaeaea;
     }
 
-    @media (max-width:$mobileSmall) {
+    @media (max-width: $mobileSmall) {
       border-bottom-right-radius: 10px;
       border-top-right-radius: 10px;
       margin-bottom: 16px;
@@ -449,11 +448,11 @@
     position: absolute;
     right: 331px;
 
-    @media (max-width:$mobile) {
+    @media (max-width: $mobile) {
       right: 221px;
     }
 
-    @media (max-width:$mobileSmall) {
+    @media (max-width: $mobileSmall) {
       right: 32px;
     }
 
@@ -461,7 +460,7 @@
 
     path,
     circle {
-      transition: all .3s ease;
+      transition: all 0.3s ease;
     }
 
     &:focus {
@@ -471,10 +470,8 @@
         stroke: #fff;
       }
 
-      ;
-
       circle {
-        fill: #C998FB;
+        fill: #c998fb;
       }
     }
 
@@ -482,8 +479,6 @@
       path {
         stroke: #fff;
       }
-
-      ;
 
       circle {
         fill: $mainPurpur;
@@ -495,11 +490,9 @@
         stroke: #fff;
       }
 
-      ;
-
       circle {
-        fill: #7033AC;
-        stroke: #7033AC;
+        fill: #7033ac;
+        stroke: #7033ac;
       }
     }
   }
@@ -508,8 +501,6 @@
     path {
       stroke: #999999;
     }
-
-    ;
 
     circle {
       fill: none;
@@ -525,11 +516,11 @@
     display: flex;
     align-items: center;
 
-    @media (max-width:$mobile) {
+    @media (max-width: $mobile) {
       width: 189px;
     }
 
-    @media (max-width:$mobileSmall) {
+    @media (max-width: $mobileSmall) {
       width: 100%;
     }
   }
@@ -542,21 +533,21 @@
   &__user {
     margin-right: 24px;
     padding: 3px;
-    transition: background-color .3s ease;
+    transition: background-color 0.3s ease;
 
     path {
-      transition: fill .3s ease;
+      transition: fill 0.3s ease;
     }
 
     &:hover {
       path {
-        fill: #C998FB;
+        fill: #c998fb;
       }
     }
 
     &:focus:not(:active) {
       outline: none;
-      background-color: #C998FB;
+      background-color: #c998fb;
 
       path {
         fill: #fff;
@@ -565,14 +556,14 @@
 
     &:active {
       path {
-        fill: #7033AC;
+        fill: #7033ac;
       }
     }
   }
 
   &__basket {
     position: relative;
-    transition: background-color .3s ease;
+    transition: background-color 0.3s ease;
 
     &::before {
       position: absolute;
@@ -597,18 +588,18 @@
     padding: 3px 0 3px 15px;
 
     path {
-      transition: fill .3s ease;
+      transition: fill 0.3s ease;
     }
 
     &:hover {
       path {
-        fill: #C998FB;
+        fill: #c998fb;
       }
     }
 
     &:focus:not(:active) {
       outline: none;
-      background-color: #C998FB;
+      background-color: #c998fb;
 
       path {
         fill: #fff;
@@ -617,7 +608,7 @@
 
     &:active {
       path {
-        fill: #7033AC;
+        fill: #7033ac;
       }
     }
   }
@@ -667,13 +658,13 @@
     }
 
     &:hover {
-      border: 2px solid #A65CF0;
+      border: 2px solid #a65cf0;
     }
 
     &:focus {
       outline: none;
-      background-color: #F8EFFF;
-      border: 2px solid #A65CF0;
+      background-color: #f8efff;
+      border: 2px solid #a65cf0;
     }
 
     .spollers__active {
@@ -682,7 +673,7 @@
 
     &._spoller-active {
       background-color: #fff;
-      border: 2px solid #A65CF0;
+      border: 2px solid #a65cf0;
       z-index: 2;
 
       .spollers__active {
@@ -694,21 +685,20 @@
       }
     }
 
-    @media (max-width:$mobile) {
+    @media (max-width: $mobile) {
       padding: 5px 30px;
     }
 
-    @media (max-width:$mobileSmall) {
+    @media (max-width: $mobileSmall) {
       border-bottom-left-radius: 10px;
       border-top-left-radius: 10px;
     }
-
   }
 
   // .spollers__body
 
   &__body {
-    @media (min-width:$mobile) {
+    @media (min-width: $mobile) {
       column-count: 2;
     }
 
@@ -731,7 +721,7 @@
     position: absolute;
     right: 0;
     top: 60px;
-    transition: all .3s ease;
+    transition: all 0.3s ease;
     z-index: 1;
   }
 
@@ -745,11 +735,11 @@
 
   &__link {
     padding: 0 5px;
-    transition: all .3s ease;
+    transition: all 0.3s ease;
 
     &:focus {
       outline: none;
-      background-color: #EBD1FF;
+      background-color: #ebd1ff;
     }
 
     &:hover {
@@ -815,7 +805,7 @@
     }
   }
 
-  @media (max-width:$mobile) {
+  @media (max-width: $mobile) {
     margin-left: 4px;
   }
 }
