@@ -7,7 +7,8 @@
 // Подключаем слайдер Swiper из node_modules
 // При необходимости подключаем дополнительные модули слайдера, указывая их в {} через запятую
 // Пример: { Navigation, Autoplay }
-import Swiper, {Autoplay, Navigation, Pagination, EffectFade, Thumbs } from 'swiper';
+import Swiper from 'swiper';
+import {Autoplay, Navigation, Pagination, EffectFade } from 'swiper/modules';
 /*
 Основниые модули слайдера:
 Navigation, Pagination, Autoplay,

@@ -59,7 +59,6 @@
     "smooth-scroll": "latest",
     "string-replace-loader": "latest",
     "style-loader": "latest",
-    "swiper": "latest",
     "terser-webpack-plugin": "latest",
     "tippy.js": "latest",
     "transform-runtime": "0.0.0",
@@ -74,6 +73,7 @@
   "dependencies": {
     "choices.js": "^10.1.0",
     "just-validate": "^3.8.1",
-    "simplebar": "latest"
+    "simplebar": "latest",
+    "swiper": "^11.0.5"
   }
 }
