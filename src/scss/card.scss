@@ -1,4 +1,10 @@
 .card {
+  &__horisontal{
+    padding-top: 76px;
+  }
+  &__vertical {
+    padding-top: 350px;
+  }
 
   // .card__container
 
@@ -20,8 +26,8 @@
 
   &__body {
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 32px;
+    grid-template-columns: 1fr 1fr;
+    gap: 25px;
     @media (max-width:$tablet){
       grid-template-columns: 5fr 4fr;
     }
@@ -32,9 +38,12 @@
 
   // .card__image
 
-  &__big-image {
+  
+
+  &__main-image {
     margin-bottom: 16px;
-    padding-top: 245px;
+    padding-top: 250px;
+    cursor: pointer;
     img {
       object-fit: contain;
     }
@@ -42,20 +51,22 @@
       margin-bottom: -4px;
     }
     @media (max-width:$mobile){
-      margin-bottom: 32px;
+      margin-bottom: 28px;
     }
     @media (max-width:$mobileSmall){
-      margin-bottom: -48px;
+      margin-bottom: -48px;      
     }
   }
 
-  &__wrap-action {
+  &__ribbon {
     margin-bottom: 32px;
-    @media (max-width:$tablet){
+    cursor: pointer;
+    @media (max-width:$mobile){
       display: flex;
       gap: 33px;
     }
     @media (max-width:$mobileSmall){
+      
       flex-direction: column;
       gap: 21px;
     }
@@ -125,7 +136,7 @@
     margin-bottom: 107px;
     font-size: 14px;
     p {
-      &:not(:last-child) {margin-bottom: 5px;}
+      &:not(:last-child) {margin-bottom: 8px;}
       @media (max-width:$mobile){
         &:not(:last-child) {margin-bottom: 7px;}
       }
@@ -161,45 +172,71 @@
   // .card__feature-sliders
 
   &__wripper-sliders {
-    max-width: 624px;
-    margin-bottom: 34px;
-    @media (max-width:$tablet){
-      max-width: 515px;
-    }
-    @media (max-width:$mobile){
-      max-width: 626px;
-    }
+    width: 100%;
   }
 
   &__slider-thumbs {
     background-color: #F6F6F6;
-    padding: 10px 0;
-    @media (max-width:$mobile){
-      max-height: 349px;
-      width: 187px;
-      padding: 10px 25px;
-    }
+    padding: 10px 10px;
+    
     @media (max-width:$mobileSmall){
       width: 100%;
+      padding: 6px 10px;
+    }
+  }
+
+  // .card__vertical
+
+  &__vertical {
+    width: 187px;
+    display: none;
+    @media (max-width:$mobile){
+      display: block;
+    }
+    @media (max-width:$mobileSmall){
+      display: none;
+    }
+  }
+
+  //.card__horisontal
+
+  &__horisontal {
+    display: block;
+    @media (max-width:$mobile){
+      display: none;
+    }
+    @media (max-width:$mobileSmall){
+      display: block;
     }
   }
 }
 
-.thumbs-images {
-  &__small-image {
-    padding-top: 58px;
+.thumbs-images{
+  &__small-image{    
+    padding-top: 110px;
+    cursor: pointer;
+    @media (max-width:$mobile){
+      padding-top: 100px;
+    }
+    @media (max-width:$mobileSmall){
+      padding-top: 67px;
+    }
   }
 }
+
+
 .feature-product {
-  padding-top: 16px;
+  padding-top: 17px;
   @media (max-width:$tablet){
     padding-top: 39px;
+    padding-left: 6px;
   }
   @media (max-width:$mobile){
     padding-top: 31px;
   }
   @media (max-width:$mobileSmall){
-    padding-top: 8px;
+    padding-top: 0;
+    padding-left: 0px;
   }
   //.feature-product__action
 
@@ -224,7 +261,7 @@
       color: $mainOrange;
       margin-left: 1px;
     }
-    margin-bottom: 3px;
+    margin-bottom: 4px;
     @media (max-width:$mobileSmall){
       margin-bottom: 0;
     }
@@ -308,7 +345,7 @@
   }
   @media (max-width:$mobileSmall){
     grid-template-columns: 1fr;
-    row-gap: 1.4px;
+    row-gap: 2.1px;
   }
 
   // .table-product__lable
@@ -320,6 +357,7 @@
     @media (max-width:$mobileSmall){
       font-size: 10px;
       line-height: 13px;
+      padding-top: 7px;
     }
     border-bottom: 1px dotted #999;
     span{
@@ -333,6 +371,9 @@
     padding-top: 10px;
     font-size: 14px;
     color: #333;
+    @media (max-width:$mobileSmall){
+      padding-top: 2px;
+    }
   }
 }
 
@@ -349,10 +390,10 @@
       padding: 71px 34px 70px 34px;
     }
     @media (max-width:$mobile){
-      padding: 33px 73px 70px 73px;
+      padding: 40px 73px 70px 73px;
     }
     @media (max-width:$mobileSmall){
-      padding: 66px 12px 70px 12px;
+      padding: 74px 12px 70px 12px;
     }
   }
 
@@ -378,13 +419,13 @@
 
   &__button-wrap {
     position: absolute;
-    top: 82px;
-    right: 36px;
+    top: 79px;
+    right: 33px;
     @media (max-width:$tablet){
       top: 69px;
     }
     @media (max-width:$mobile){
-      top: 32px;
+      top: 38px;
       right: 72px;
     }
     @media (max-width:$mobileSmall){

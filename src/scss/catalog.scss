@@ -1,6 +1,7 @@
 .header-page {
-  padding-top: 23px;
+  padding-top: 21px;
   margin-bottom: 32px;
+  
   @media (max-width:$mobileSmall){
     display: none;
   }
@@ -106,11 +107,11 @@
       width: 100%;
       display: grid;
       gap: 32px;
-      grid-template-columns: repeat(4, 1fr);
+      grid-template-columns: 1fr 1fr 1fr 1fr;
       height: 40px;
     }
     @media (max-width:$mobile){
-      grid-template-columns: repeat(2, 1fr);
+      grid-template-columns: 1fr 1fr;
       height: 96px;
       max-width: 405px;
       row-gap: 17px;
@@ -326,11 +327,11 @@
 
   &__list {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: 1fr 1fr 1fr;
     gap: 32px;
     margin-bottom: 32px;
     @media (max-width:$mobile){
-      grid-template-columns: repeat(2, 1fr);
+      grid-template-columns: 1fr 1fr;
     }
     @media (max-width:$mobileSmall){
       gap: 16px;

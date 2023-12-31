@@ -39,6 +39,17 @@ document.addEventListener("click", function(e) {
 
   //переключение страниц каталога
   const targetElement = e.target;
+
+  //замена главного изображения в попапе карточки товара при клике на одном из малых изображений в слайдере 
+  if(targetElement.closest('.thumbs-images__small-image')) {
+    const targetElem = document.querySelector('.card__big-image');
+    targetElem.innerHTML = "";
+    let imageElem = document.createElement('img');
+    imageElem.src = e.target.src;
+    imageElem.alt = e.target.alt;
+    targetElem.append(imageElem);
+  }
+
   if (e.target.closest('.hight-rating__show-more')) {
     getProducts(targetElement);
     e.preventDefault();
@@ -270,6 +281,8 @@ function formRemoveError(input) {
 function emailTest(input) {
   return !/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,8})+$/.test(input.value);
 }
+
+
 
 
 

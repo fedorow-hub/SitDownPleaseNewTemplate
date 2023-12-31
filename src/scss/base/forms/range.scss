@@ -49,7 +49,6 @@
   -webkit-transform-style: preserve-3d;
   transform-origin: 0 0;
   transform-style: flat;
-  //background: $mainPurpur!important;
 }
 
 /* Offset direction
@@ -69,28 +68,11 @@
 
 .noUi-horizontal .noUi-origin {
   height: 0;
-  //height: 3px!important;
 }
 
 .noUi-handle {
   backface-visibility: hidden;
   position: absolute;
-
-  /* width: 0!important;
-  height: 0!important;
-  border-left: 7px solid transparent!important;
-  border-right: 7px solid transparent!important;
-  border-bottom: 13px solid $mainPurpur!important;
-  box-shadow: none!important;
-  border-radius: 0!important;
-  right: -7px!important;
-  top: 3px!important;
-  &::before {
-    display: none!important;;
-  }
-  &::after {
-    display: none!important;;
-  } */
 }
 
 .noUi-touch-area {

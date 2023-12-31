@@ -22,10 +22,10 @@
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
-    height: 400px;
+    min-height: 400px;
 
     @media (max-width:$mobileSmall) {
-      height: 210px;
+      min-height: 210px;
     }
   }
 
@@ -821,7 +821,7 @@
       }
 
       img {
-        object-position: -8px !important;
+        object-position: -8px;
       }
     }
 
@@ -1175,7 +1175,7 @@
   &__button {
     width: 158px;
     height: 55px;
-    font-weight: 600px;
+    font-weight: 600;
     padding: 0;
     margin-bottom: 13px;
   }
@@ -1183,7 +1183,7 @@
   &__label {
     cursor: pointer;
     font-size: 14px;
-    letter-spacing: 1;
+    letter-spacing: 1px;
     display: flex;
     align-items: center;
     user-select: none;
