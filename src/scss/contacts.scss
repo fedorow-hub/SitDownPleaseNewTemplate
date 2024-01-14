@@ -3,6 +3,15 @@
 
   &__container {
     padding-bottom: 70px;
+
+    @media (max-width: $mobile) {
+      padding: 0 72px;
+      padding-bottom: 70px;
+    }
+    @media (max-width: $mobileSmall) {
+      padding: 0 12px;
+      padding-bottom: 70px;
+    }
   }
 
   // .contacts__title
@@ -19,6 +28,14 @@
     gap: 32px;
     max-width: 776px;
     margin-bottom: 32px;
+
+    @media (max-width: $mobile) {
+      max-width: 556px;
+    }
+
+    @media (max-width: $mobileSmall) {
+      display: block;
+    }
   }
 
   // .contacts__input
@@ -30,7 +47,7 @@
     background-color: #f6f6f6;
     border-radius: 10px;
     padding: 12px 18px;
-    transition: all 0.3s ease;
+    transition: background-color, box-shadow 0.3s ease;
 
     &:hover {
       background-color: #eaeaea;
@@ -46,12 +63,19 @@
       outline: 1px solid #b8ec64;
       background-color: #f6f6f6;
     }
+
+    @media (max-width: $mobileSmall) {
+      margin-bottom: 16px;
+    }
   }
 
   // .contacts__button
 
   &__button {
     padding: 16px 35px;
+    @media (max-width: $mobileSmall) {
+      width: 120px;
+    }
   }
 
   // .contacts__map

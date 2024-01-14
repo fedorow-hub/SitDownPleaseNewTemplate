@@ -6,7 +6,7 @@
   background-color: $mainPurpur;
   padding: 20px 50px;
   border-radius: 10px;
-  transition: all 0.3s ease;
+  transition: background-color 0.3s ease;
   @media (max-width: $mobileSmall) {
     width: 100%;
   }
@@ -37,7 +37,7 @@
   border: 2px solid $mainPurpur;
   border-radius: 10px;
   width: 129px;
-  transition: all 0.3s ease;
+  transition: background-color 0.3s ease;
   &:hover {
     background-color: $mainPurpur;
     color: #fff;

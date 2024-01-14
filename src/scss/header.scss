@@ -1,6 +1,8 @@
 //====================================================================================================
 .extra-top-header {
+  position: relative;
   background-color: $greyLight;
+  z-index: 10;
 
   &__container {
     @media (max-width: $mobile) {
@@ -13,15 +15,47 @@
       padding: 12px 12px;
     }
   }
+
+  &::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: $greyLight;
+    //z-index: 5;
+  }
 }
 
 .top-header {
   background-color: $greyLight;
   padding: 7px 0;
+  position: relative;
+  z-index: 10;
+
+  &::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #f6f6f6;
+
+    @media (max-width: $mobileSmall) {
+      background-color: #fff;
+    }
+  }
 
   @media (max-width: $mobileSmall) {
     background-color: #fff;
     border-bottom: 1px solid $greyLight;
+  }
+
+  // .top-header__adapt
+  &__adapt {
+    //margin-right: 5px;
   }
 
   // .top-header__container
@@ -30,6 +64,7 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
+    position: relative;
 
     @media (max-width: $mobile) {
       display: block;
@@ -83,17 +118,16 @@
   // .top-header__phone
 
   &__phone {
-    //margin-right: 20px;
     color: $mainOrange;
     min-width: 145px;
     font-size: 14px;
     display: flex;
     align-items: center;
-    transition: all 0.3s ease;
+    transition: background-color 0.3s, color 0.3s, ease;
     z-index: 3;
 
     path {
-      transition: all 0.3s ease;
+      transition: fill 0.3s ease;
     }
 
     &:focus {
@@ -132,13 +166,18 @@
       justify-content: space-between;
     }
 
-    @media (max-width: $mobileSmall) {
-      //position: fixed;
+    @media (max-width: 690px) {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
       z-index: 2;
       width: 100%;
-      padding: 12px;
+      padding: 12px 70px;
       background-color: $greyLight;
       margin-top: auto;
+    }
+
+    @media (max-width: $mobileSmall) {
+      padding: 12px;
     }
   }
 
@@ -146,10 +185,10 @@
     padding: 10px 0;
 
     &:not(:last-child) {
-      @include adaptiveValue("margin-right", 65, -50);
+      @include adaptiveValue("margin-right", 65, -60);
 
       @media (max-width: $tablet) {
-        @include adaptiveValue("margin-right", 113, -40);
+        @include adaptiveValue("margin-right", 118, -50);
       }
 
       @media (max-width: 560px) {
@@ -158,7 +197,7 @@
     }
 
     a {
-      transition: all 0.3s ease;
+      transition: background-color 0.3s, color 0.3s ease;
 
       &:focus:not(:active) {
         outline: none;
@@ -199,9 +238,26 @@
 //====================================================================================================
 
 .medium-header {
+  position: relative;
+  //z-index: 10;
+
   @media (max-width: $mobileSmall) {
     border-bottom: 1px solid $greyLight;
     margin-bottom: 16px;
+    &::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 48px;
+      background-color: #f6f6f6;
+      z-index: 3;
+
+      @media (max-width: $mobileSmall) {
+        background-color: #fff;
+      }
+    }
   }
 
   // .medium-header__container
@@ -241,7 +297,7 @@
     @media (max-width: $mobile) {
       @include adaptiveValue("margin-right", 0, 0);
       padding-left: 75px;
-      z-index: 3;
+      z-index: 10;
     }
 
     @media (max-width: $mobileSmall) {
@@ -250,23 +306,44 @@
     }
   }
 
+  // .medium-header__wrapper
+
   &__wrapper {
     width: 100%;
+    //position: relative;
+
+    @media (max-width: $mobile) {
+      &::after {
+        content: "";
+        position: absolute;
+        width: 165px;
+        height: 110px;
+        top: 45px;
+        left: 415px;
+        background-image: url("@img/header/elefant.svg");
+        background-size: auto;
+        background-repeat: no-repeat;
+      }
+    }
+    @media (max-width: $mobileSmall) {
+      &::after {
+        display: none;
+      }
+    }
 
     @media (max-width: $mobile) {
       z-index: 2;
-      display: flex;
+      //display: flex;
       position: fixed;
-      top: 182px;
+      top: 140px;
       left: -100%;
       background-color: #fff;
       transition: left 0.3s ease;
 
       .menu-open & {
         left: 0;
+        overflow-y: auto;
       }
-
-      //overflow: auto;
     }
 
     @media (max-width: $mobileSmall) {
@@ -294,6 +371,7 @@
       justify-content: start;
       padding-left: 72px;
       padding-top: 46px;
+      padding-bottom: 20px;
       background-color: #fff;
       overflow: auto;
     }
@@ -318,16 +396,15 @@
 
   &__item {
     &:not(:last-child) {
-      margin-right: 5px;
+      margin-right: 2px;
     }
   }
 
   // .medium-header__link
 
   &__link {
-    transition: all 0.3s ease;
+    transition: background-color 0.3s, color 0.3s ease;
 
-    //padding: 3px;
     &:hover {
       color: #a65cf0;
     }
@@ -372,6 +449,7 @@
 
     @media (max-width: $mobileSmall) {
       padding: 0 12px;
+      padding-bottom: 32px;
     }
   }
 
@@ -411,7 +489,7 @@
     height: 60px;
     border-top-left-radius: 10px;
     border-bottom-left-radius: 10px;
-    transition: all 0.3s ease;
+    transition: box-shadow 0.3s, color 0.3s ease;
 
     &:focus {
       outline: none;
@@ -460,7 +538,7 @@
 
     path,
     circle {
-      transition: all 0.3s ease;
+      transition: stroke 0.3s, fill 0.3s ease;
     }
 
     &:focus {
@@ -637,8 +715,8 @@
     border: 2px solid $greyLight;
     border-bottom-right-radius: 10px;
     border-top-right-radius: 10px;
-    z-index: 10;
-    transition: all 0.3s ease;
+    //z-index: 10; //убран из-за выступания поверх выплывающего адаптивного меню
+    transition: border 0.3s, background-color 0.3s ease;
 
     &::before {
       position: absolute;
@@ -721,7 +799,6 @@
     position: absolute;
     right: 0;
     top: 60px;
-    transition: all 0.3s ease;
     z-index: 1;
   }
 
@@ -735,7 +812,7 @@
 
   &__link {
     padding: 0 5px;
-    transition: all 0.3s ease;
+    transition: background-color 0.3s, color 0.3s ease;
 
     &:focus {
       outline: none;
@@ -767,7 +844,7 @@
     &::before,
     &::after {
       content: "";
-      transition: all 0.3s ease 0s;
+      transition: transform 0.3s, top 0.3s ease 0s;
       right: 0;
       position: absolute;
       width: 100%;

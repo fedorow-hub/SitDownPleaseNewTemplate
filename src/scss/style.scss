@@ -152,5 +152,8 @@ body {
 
   &__hero {
     margin-top: 32px;
+    @media (max-width: $mobileSmall) {
+      margin-top: 0;
+    }
   }
 }

@@ -135,7 +135,7 @@
     background-color: #f6f6f6;
     border-radius: 10px;
     padding-left: 18px;
-    transition: all 0.3s ease;
+    transition: background-color 0.3s, box-shadow 0.3s ease;
     @media (max-width: $mobileSmall) {
       margin-bottom: 16px;
     }
@@ -364,8 +364,7 @@
     background-color: #f6f6f6;
     border-radius: 10px;
     padding-left: 18px;
-    transition: all 0.3s ease;
-
+    transition: background-color 0.3s, box-shadow 0.3s ease;
     &:hover {
       background-color: #eaeaea;
     }

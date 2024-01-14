@@ -53,6 +53,7 @@
     }
     @media (max-width: $mobileSmall) {
       margin-bottom: -48px;
+      margin-top: -66px;
     }
   }
 
@@ -234,21 +235,21 @@
     padding-left: 6px;
   }
   @media (max-width: $mobile) {
-    padding-top: 31px;
+    padding-top: 37px;
   }
   @media (max-width: $mobileSmall) {
-    padding-top: 0;
+    padding-top: 8px;
     padding-left: 0px;
   }
   //.feature-product__action
 
   &__action {
-    margin-bottom: 110px;
+    margin-bottom: 116px;
     @media (max-width: $tablet) {
-      margin-bottom: 67px;
+      margin-bottom: 74px;
     }
     @media (max-width: $mobile) {
-      margin-bottom: 0px;
+      margin-bottom: 0;
       padding-top: 54px;
     }
     @media (max-width: $mobileSmall) {
@@ -340,8 +341,9 @@
 // .table-product
 
 .table-product {
-  display: grid;
-  grid-template-columns: 1fr 295px;
+  display: flex;
+  flex-direction: column;
+  gap: 11px;
   @media (max-width: $tablet) {
     grid-template-columns: 1fr 217px;
   }
@@ -350,30 +352,57 @@
     row-gap: 2.1px;
   }
 
+  // .table-product__item
+
+  &__item {
+    display: flex;
+    align-items: flex-end;
+    @media (max-width: $mobileSmall) {
+      display: block;
+      &:not(:last-child) {
+        margin-bottom: 10px;
+      }
+    }
+  }
+
   // .table-product__lable
 
   &__lable {
+    position: relative;
+    overflow: hidden;
+    flex-grow: 1;
+
+    &::after {
+      content: "..................................................................................................................................................................";
+      position: absolute;
+    }
+
     font-size: 14px;
-    padding-top: 10px;
     color: #999;
     @media (max-width: $mobileSmall) {
+      &::after {
+        display: none;
+      }
       font-size: 10px;
       line-height: 13px;
-      padding-top: 7px;
-    }
-    border-bottom: 1px dotted #999;
-    span {
-      background-color: white;
     }
   }
 
   // .table-product__value
 
   &__value {
-    padding-top: 10px;
+    width: 48%;
     font-size: 14px;
     color: #333;
+    @media (max-width: $tablet) {
+      width: 53%;
+    }
+    @media (max-width: $tablet) {
+      width: 35%;
+    }
+
     @media (max-width: $mobileSmall) {
+      width: 100%;
       padding-top: 2px;
     }
   }
@@ -430,7 +459,7 @@
       right: 72px;
     }
     @media (max-width: $mobileSmall) {
-      top: 15px;
+      top: 5px;
       right: 0px;
       position: relative;
       margin: 0 auto;

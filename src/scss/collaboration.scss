@@ -3,8 +3,20 @@
 
   &__container {
     padding: 0 72px;
+    padding-bottom: 23px;
+    @media (max-width: $tablet) {
+      padding: 0 36px;
+      padding-top: 2px;
+      padding-bottom: 23px;
+    }
+
+    @media (max-width: $mobile) {
+      padding: 0 72px;
+      padding-top: 2px;
+      padding-bottom: 23px;
+    }
     @media (max-width: $mobileSmall) {
-      padding: 32px 12px 0px 12px;
+      padding: 0px 12px 0px 12px;
     }
   }
 
@@ -60,8 +72,12 @@
   }
 
   &__text {
-    font-size: 14px;
-    line-height: 21px;
+    font-size: 16px;
+    line-height: 24px;
+    @media (max-width: $mobileSmall) {
+      font-size: 14px;
+      line-height: 21px;
+    }
   }
 }
 .benefits {
@@ -74,7 +90,10 @@
 
   &__title {
     margin-bottom: 12px;
-    font-size: 14px;
+    font-size: 24px;
+    @media (max-width: $mobileSmall) {
+      font-size: 14px;
+    }
   }
 
   // .benefits__subtitle
@@ -162,13 +181,36 @@
   // .guarantees__description
 
   &__description {
+    position: relative;
     font-size: 24px;
     line-height: 36px;
-    max-width: 512px;
+    max-width: 625px;
+    padding-left: 108px;
+    padding-top: 22px;
     @media (max-width: $mobileSmall) {
       font-size: 16px;
       line-height: 24px;
-      max-width: 186px;
+      max-width: 240px;
+      padding-left: 51px;
+      padding-top: 0;
+    }
+
+    &::before {
+      position: absolute;
+      content: "";
+      width: 100px;
+      height: 117px;
+      top: 0;
+      left: 0;
+      background-image: url(@img/collaborating/pencil.png);
+      background-size: contain;
+      background-repeat: no-repeat;
+
+      @media (max-width: $mobileSmall) {
+        top: 8px;
+        width: 36px;
+        height: 64px;
+      }
     }
   }
 }

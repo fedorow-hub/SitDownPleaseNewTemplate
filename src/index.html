@@ -312,7 +312,7 @@
             <div class="top-category__top-row">
               <article class="top-category__item item-top-category">
                 <div class="item-top-category__body">
-                  <div class="item-top-category__descriptions">
+                  <div class="item-top-category__descriptions item-top-category__descriptions_sofa">
                     <a class="item-top-category__desc" href="catalog.html">Прямые</a>
                     <a class="item-top-category__desc" href="catalog.html">Угловые</a>
                     <a class="item-top-category__desc" href="catalog.html">Модульные</a>
@@ -402,13 +402,14 @@
                     <a class="item-top-category__desc" href="catalog.html">Тумбы</a>
                     <a class="item-top-category__desc" href="catalog.html">Комоды</a>
                   </div>
-                  <div class="item-top-category__title"><h3>Тумбы и комоды</h3><a class="item-top-category__link item-top-category__link_adapt" href="catalog.html">
+                  <div class="item-top-category__title item-top-category__title_long"><h3>Тумбы и комоды</h3><a class="item-top-category__link item-top-category__link_adapt" href="catalog.html">
                     <svg width="22" height="22" viewBox="0 0 22 22" fill="none" xmlns="http://www.w3.org/2000/svg">
                       <g clip-path="url(#clip0_663_1822)">
                         <circle cx="11" cy="11" r="10" fill="transparent" stroke="#A65CF0" stroke-width="2"></circle>
                         <path d="M9.625 7.5625L13.0625 11L9.625 14.4375" stroke="#A65CF0" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
                       </g>
-                      </svg></a></div>
+                    </svg></a>
+                  </div>
                   <div class="item-top-category__image item-top-category__image_tumb -ibg">
                     <img src="@img/topCategory/4.png" alt="Кресла">
                   </div>
@@ -519,7 +520,7 @@
                   </div>
                 </div>
               </div>
-              <div class="swiper__button-wrap">
+              <div class="swiper__button-wrap swiper__button-wrap_second">
                 <button class="swiper__button-prev">
                   <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <circle r="15" transform="matrix(-1 0 0 1 16 16)" stroke="#A65CF0" stroke-width="2"></circle>
@@ -552,16 +553,18 @@
                       </svg></button>
                 </div>
                 <form class="feed-back__form" id="form" action="#" method="POST">
-                  <div class="feed-back__wrap">
+                  <label class="feed-back__wrap">
+                    <span class="visually-hidden">Введите Ваше имя</span>
                     <input class="feed-back__input" id="name1" data-validate-field="name" autocomplete="off" type="text" name="firstName" placeholder="Как вас зовут?">
-                  </div>
-                  <div class="feed-back__wrap">
+                  </label>
+                  <label class="feed-back__wrap">
+                    <span class="visually-hidden">Введите Ваш телефон</span>
                     <input class="feed-back__input _phone" id="phone1" data-validate-field="tel" autocomplete="off" type="tel" name="phoneNumber" placeholder="Ваш телефон">
-                  </div>
-                  <div class="feed-back__wrap">
+                  </label>
+                  <label class="feed-back__wrap">
+                    <span class="visually-hidden">Введите Ваш e-mail</span>
                     <input class="feed-back__input _email" id="email" autocomplete="off" type="email" name="email" placeholder="Ваш e-mail">
-                  </div>
-                  <!-- <input class="feed-back__button btn-dark" id="feedBack" data-popup="#popup-buy" type="submit"> -->
+                  </label>
                   <input class="feed-back__button btn-dark" id="feedBack" type="submit">
                   <label class="feed-back__label">
                     <input class="visually-hidden feed-back__check" id="feedBackCheck" type="checkbox">
@@ -573,10 +576,6 @@
               </div>
             </div>
             <div class="feed-back__image">
-              <picture>
-                <source srcset="@img/formImg.jpg" media="(min-width: 769px)">
-                <img src="@img/formImg-768.jpg" alt="MDN">
-              </picture>
             </div>
           </div>
         </section>

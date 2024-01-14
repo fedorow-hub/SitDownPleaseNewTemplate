@@ -4,6 +4,7 @@
   &__container {
     @media (max-width: $mobileSmall) {
       padding: 0 12px;
+      padding-bottom: 35px;
     }
   }
 
@@ -197,15 +198,19 @@
   // .special__container
 
   &__container {
-    margin-top: 70px;
+    padding-top: 70px;
+    padding-bottom: 35px;
     position: relative;
 
     @media (max-width: $mobile) {
       padding: 0 72px;
+      padding-top: 70px;
+      padding-bottom: 35px;
     }
 
     @media (max-width: $mobileSmall) {
       padding: 0 12px;
+      padding-top: 35px;
     }
   }
 
@@ -221,7 +226,7 @@
     min-height: 511px;
 
     @media (max-width: $mobileSmall) {
-      margin-bottom: 14px;
+      margin-bottom: 17px;
     }
   }
 
@@ -235,7 +240,6 @@
     &_big {
       width: 48.7%;
 
-      //min-width: 296px;
       .slide-special__img-wrap {
         margin-top: 7px;
         margin-bottom: 17px;
@@ -261,7 +265,7 @@
   &__button-wrap {
     @media (min-width: $mobileSmall) {
       position: absolute;
-      top: -1px;
+      top: 69px;
       right: 35px;
     }
 
@@ -277,13 +281,20 @@
     @media (max-width: $mobileSmall) {
       margin: 0 auto;
     }
+
+    &_second {
+      top: 0;
+    }
   }
 
   &__button-prev,
   &__button-next {
-    path,
+    path {
+      transition: stroke 0.3s ease;
+    }
+
     circle {
-      transition: all 0.3s ease;
+      transition: fill 0.3s ease;
     }
 
     &:hover:not(.swiper-button-disabled) {
@@ -383,6 +394,7 @@
   &__price {
     display: flex;
     align-items: center;
+    margin-bottom: 10px;
   }
 
   // .slide-special__price-new
@@ -430,7 +442,8 @@
 //====================================================================================================
 
 .hight-rating {
-  padding-top: 70px;
+  padding-top: 35px;
+  padding-bottom: 71px;
 
   @media (max-width: $mobileSmall) {
     padding-top: 66px;
@@ -481,7 +494,6 @@
 
   &__footer {
     text-align: center;
-    margin-bottom: 71px;
   }
 
   // .hight-rating__show-more
@@ -677,7 +689,6 @@
 
     .item-top-category__descriptions {
       @media (max-width: $mobileSmall) {
-        display: block;
         margin-left: 16px;
         margin-bottom: 6px;
 
@@ -726,7 +737,14 @@
     flex-wrap: wrap;
 
     @media (max-width: $mobileSmall) {
+      flex-direction: column;
       margin-left: 30px;
+    }
+
+    &_sofa {
+      @media (max-width: $mobileSmall) {
+        flex-direction: row;
+      }
     }
   }
 
@@ -782,6 +800,13 @@
         margin-left: 30px;
       }
     }
+
+    &_long {
+      @media (max-width: $mobileSmall) {
+        align-items: end;
+        max-width: 92px;
+      }
+    }
   }
 
   // .item-top-category__image
@@ -791,6 +816,9 @@
     margin-bottom: 31px;
     padding-top: 308px;
     max-width: 515px;
+    img {
+      object-position: right;
+    }
 
     @media (max-width: $mobileSmall) {
       margin-bottom: 16px;
@@ -804,6 +832,9 @@
 
       @media (max-width: $tablet) {
         height: 310px;
+        img {
+          object-position: center;
+        }
       }
 
       @media (max-width: $mobileSmall) {
@@ -849,24 +880,19 @@
         padding-top: 90px;
       }
     }
-
-    img {
-      object-position: right;
-    }
   }
 
   // .item-top-category__link
 
   &__link {
     display: flex;
-    width: 108px;
     align-items: center;
     color: $mainPurpur;
     font-weight: 700;
-    justify-content: space-between;
 
     span {
       position: relative;
+      margin-right: 6px;
 
       &:after {
         position: absolute;
@@ -882,9 +908,12 @@
     }
 
     svg {
-      circle,
+      circle {
+        transition: fill 0.3s ease;
+      }
+
       path {
-        transition: all 0.3s ease;
+        transition: stroke 0.3s ease;
       }
     }
 
@@ -969,6 +998,7 @@
 
   &__container {
     position: relative;
+    padding-bottom: 35px;
 
     @media (max-width: $mobile) {
       padding: 0 72px;
@@ -1030,6 +1060,7 @@
     font-size: 24px;
     line-height: 34px;
     flex: 1 1 auto;
+    margin-bottom: 10px;
 
     @media (max-width: $tablet) {
       font-size: 16px;
@@ -1042,7 +1073,7 @@
   &__btn {
     @media (max-width: $mobileSmall) {
       width: 128px;
-      padding: 17px 34px;
+      padding: 14px 34px;
     }
   }
 }
@@ -1060,14 +1091,18 @@
   overflow: hidden;
 }
 
+//feed-back__container
 .feed-back {
   &__container {
-    display: flex;
-    padding-top: 70px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+
+    padding-top: 35px;
     padding-bottom: 71px;
 
     @media (max-width: $mobile) {
       padding: 68px 72px 71px 72px;
+      grid-template-columns: 2fr 1fr;
     }
 
     @media (max-width: $mobileSmall) {
@@ -1077,8 +1112,6 @@
   }
 
   &__body {
-    margin-right: 32px;
-    min-width: 405px;
     max-width: 624px;
 
     @media (max-width: $tablet) {
@@ -1087,7 +1120,36 @@
 
     @media (max-width: $mobileSmall) {
       min-width: 200px;
+      max-width: 100%;
       margin-right: 0px;
+    }
+  }
+
+  &__image {
+    position: relative;
+    &::after {
+      content: "";
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      top: 24px;
+      right: -15px;
+      background-image: url("@img/formImg.jpg");
+      background-size: auto;
+      background-repeat: no-repeat;
+
+      @media (max-width: $tablet) {
+        right: 12px;
+        background-size: contain;
+        top: 87px;
+      }
+
+      @media (max-width: $mobile) {
+        background-image: url("@img/formImg-768.jpg");
+        background-size: cover;
+        right: -12px;
+        top: 0;
+      }
     }
   }
 
@@ -1135,16 +1197,17 @@
 
   &__wrap {
     position: relative;
+    margin-bottom: 29px;
   }
 
   &__input {
     height: 55px;
     width: 100%;
-    margin-bottom: 29px;
+
     background-color: #f6f6f6;
     border-radius: 10px;
-    padding-left: 18px;
-    transition: all 0.3s ease;
+    padding: 18px;
+    transition: background-color 0.3s, box-shadow 0.3s ease;
 
     &:hover {
       background-color: #eaeaea;
@@ -1188,6 +1251,7 @@
     color: #a65cf0;
     text-decoration: underline;
     transition: color 0.3s ease;
+    letter-spacing: 0;
 
     &:focus {
       color: #c998fb;
@@ -1241,8 +1305,6 @@
   }
 
   &__image {
-    padding: 21px 0 0 0;
-
     @media (max-width: $tablet) {
       padding: 76px 0 0 0;
     }

@@ -41,6 +41,7 @@
         margin-bottom: 27px;
       }
     }
+    max-width: 200px;
 
     @media (max-width: $tablet) {
       margin-right: 32px;
@@ -49,6 +50,7 @@
       display: flex;
       justify-content: space-between;
       margin-right: 0;
+      max-width: 100%;
     }
     @media (max-width: $mobileSmall) {
       display: block;
@@ -59,7 +61,7 @@
   &__logo {
     margin-bottom: 31px;
     img {
-      transition: all 0.3s ease;
+      transition: transform 0.3s ease;
     }
     &:focus {
       outline: none;
@@ -123,12 +125,10 @@
 
   &__list-links {
     margin-top: 3px;
-    display: flex;
-    justify-content: space-between;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
     width: 100%;
-    flex-wrap: wrap;
     @media (max-width: $mobileSmall) {
-      display: grid;
       width: 100%;
       grid-template-columns: 1fr 1fr;
       column-gap: 7px;
@@ -140,6 +140,7 @@
 
   &__bottom {
     background-color: #f7f7f7;
+    color: #999;
     padding: 5px 0;
     text-align: center;
     font-size: 14px;
@@ -164,7 +165,7 @@
 
   &__link {
     display: block;
-    transition: all 0.3s ease;
+    transition: background-color 0.3s ease;
     font-size: 14px;
     &:not(:last-child) {
       margin-bottom: 10px;
