@@ -165,6 +165,18 @@
   }
 }
 
+/* Chrome, Safari, Edge, Opera */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Firefox */
+input[type="number"] {
+  -moz-appearance: textfield;
+}
+
 .price-filter {
   // .price-filter__title
 
@@ -175,22 +187,66 @@
   // .price-filter__range
 
   &__range {
+    margin-top: 10px;
     @media (max-width: $tablet) {
-      position: absolute;
-      //z-index: 10;
-      background-color: #fff;
       width: 190px;
-      top: -10px;
     }
     @media (max-width: $mobile) {
       width: 140px;
     }
   }
 
+  // price-filter__body
+
+  &__body {
+    width: 240px;
+    height: 65px;
+    padding-top: 10px;
+    padding-left: 10px;
+    background-color: #fff;
+
+    @media (max-width: $mobile) {
+      width: 155px;
+      height: 100px;
+    }
+  }
+
   // .price-filter__inputs
 
   &__inputs {
-    display: none;
+    border: none;
+    display: flex;
+    justify-content: space-between;
+    @media (max-width: $mobile) {
+      flex-direction: column;
+      gap: 5px;
+    }
+  }
+
+  // .price-filter__label
+
+  &__label {
+    display: flex;
+    align-items: center;
+    span {
+      margin-right: 9px;
+    }
+  }
+
+  // .price-filter__text
+
+  &__text {
+    color: #999;
+  }
+
+  // .price-filter__input
+
+  &__input {
+    border: 1px solid #e5e5e5;
+    border-radius: 4px;
+    padding: 0 13px;
+    width: 86px;
+    height: 30px;
   }
 }
 

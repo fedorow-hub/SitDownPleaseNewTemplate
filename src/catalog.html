@@ -114,8 +114,14 @@
                   <div class="price-filter__range">
                     <div class="price-filter__body" data-range>
                       <div class="price-filter__inputs">
-                        <input class="price-filter__input" data-range-from="0" autocomplete="off" type="text" value="2000" name="form[]">
-                        <input class="price-filter__input" data-range-to="200000" autocomplete="off" type="text" value="150000" name="form[]">
+                        <label class="price-filter__label">
+                          <span class="price-filter__text">от</span>
+                          <input class="price-filter__input" data-range-from="0" autocomplete="off" type="number" value="2000" name="form[]">
+                        </label>
+                        <label class="price-filter__label">
+                          <span class="price-filter__text">до</span>
+                          <input class="price-filter__input" data-range-to="200000" autocomplete="off" type="number" value="150000" name="form[]">
+                        </label>
                       </div>
                       <div class="price-filter__range" data-range-item></div>
                     </div>

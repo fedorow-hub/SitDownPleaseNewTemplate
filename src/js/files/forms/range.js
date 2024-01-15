@@ -12,11 +12,12 @@ export function rangeInit() {
   if (priceRange) {
     const textFrom = priceRange.querySelector('[data-range-from]');
     const textTo = priceRange.querySelector('[data-range-to]');
+
     let item = priceRange.querySelector('[data-range-item]');
     noUiSlider.create(item, {
       start: [Number(textFrom.value), Number(textTo.value)],
 			connect: true,
-      tooltips: [true, true],
+      step: 1,
       format: {
         from: function(value) {
                 return parseInt(value);
@@ -34,12 +35,23 @@ export function rangeInit() {
       textFrom,
       textTo
     ];
+
     item.noUiSlider.on('update', function (values, handle) {
       snapValues[handle].value = values[handle];
-  });
+    });
+
+    const setRangeSlider = (i, value) => {
+      let arr = [null, null];
+      arr[i] = value;
+      item.noUiSlider.set(arr);
+    }
+
+    snapValues.forEach((el, index) => {
+      el.addEventListener('change', (e) => {
+        setRangeSlider(index, e.target.value);
+      })
+    });
   }
-
-
 }
 rangeInit();
 
